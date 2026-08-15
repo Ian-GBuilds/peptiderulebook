@@ -49,9 +49,17 @@ const defaultLd = [Organization(site), WebSite(site)];
     {site.twitter && <meta name="twitter:site" content={site.twitter} />}
     <JsonLd data={[...defaultLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])]} />
   </head>
-  <body class="bg-stone-50 text-[#1e293b] min-h-screen flex flex-col">
+  <body class="bg-ground text-ink min-h-screen flex flex-col">
+    <!--
+      THESIS: A reference desk for peptide regulation — warm paper, ink navy, regulatory stamps, hairline rules.
+      OWN-WORLD: Source Serif 4 display, Source Sans 3 body, Sometype Mono metadata; ground #F7F4EC, paper #FDFBF6, ink #0D1B2A, accent #C84C1B, stamp green/amber/red/blue.
+      STORY: Visitors see a jurisdiction-qualified answer first, trace it to controlling sources, and subscribe to rule changes.
+      FIRST VIEWPORT: Site name and tagline at display scale, search + CTA, then latest updates in a ruled list.
+      FORM: Reference-desk editorial system.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+    -->
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 motion-safe:animate-reveal">
       <slot />
     </main>
     <Footer />

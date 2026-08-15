@@ -16,19 +16,19 @@ const listLd = ItemList(documents.map((d) => ({
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Documents', href: '/documents' }]} />
     <div class="py-10">
-      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Documents</h1>
-      <p class="text-slate-600 max-w-3xl">Controlling and secondary source documents with links to official pages, PDFs, and archives.</p>
+      <h1 class="text-3xl font-bold text-ink mb-4">Documents</h1>
+      <p class="text-ink-muted max-w-3xl">Controlling and secondary source documents with links to official pages, PDFs, and archives.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         {documents.map((d) => (
-          <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="text-lg font-semibold text-[#1e293b]">
-              <a href={`/documents/${d.slug}/`} class="hover:text-orange-600 hover:underline">{d.title}</a>
+          <article class="card p-5">
+            <h3 class="text-lg font-semibold text-ink">
+              <a href={`/documents/${d.slug}/`} class="hover:text-accent hover:underline">{d.title}</a>
             </h3>
-            <p class="mt-2 text-sm text-slate-600 line-clamp-3">{d.plain_language_summary}</p>
+            <p class="mt-2 text-sm text-ink-muted line-clamp-3">{d.plain_language_summary}</p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{d.issuing_body}</span>
-              <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{d.document_type}</span>
-              {d.current_status && <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{d.current_status}</span>}
+              <span class="rounded bg-ground px-2 py-1 text-ink-muted">{d.issuing_body}</span>
+              <span class="rounded bg-ground px-2 py-1 text-ink-muted">{d.document_type}</span>
+              {d.current_status && <span class="rounded bg-ground px-2 py-1 text-ink-muted">{d.current_status}</span>}
             </div>
           </article>
         ))}

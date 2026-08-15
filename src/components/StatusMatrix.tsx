@@ -18,22 +18,22 @@ export default function StatusMatrix({ substance, documents, jurisdictions }: Pr
 
   return (
     <section aria-labelledby="status-heading" className="mt-8">
-      <h2 id="status-heading" className="text-xl font-bold text-[#1e293b]">Current status</h2>
-      <p className="mt-2 text-slate-700">{summary}</p>
-      <div className="mt-4 overflow-x-auto rounded-lg border border-slate-200">
-        <table className="min-w-full text-sm" aria-label={`Status assertions for ${substance.canonical_name}`}>
+      <h2 id="status-heading" className="text-2xl font-bold font-serif text-ink">Current status</h2>
+      <p className="mt-2 text-ink-muted">{summary}</p>
+      <div className="mt-4 overflow-x-auto border border-hairline">
+        <table className="data-table min-w-full" aria-label={`Status assertions for ${substance.canonical_name}`}>
           <caption className="sr-only">Status assertions by activity, jurisdiction, date, qualification, and sources</caption>
-          <thead className="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
+          <thead>
             <tr>
-              <th className="px-4 py-3">Activity</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">As of</th>
-              <th className="px-4 py-3">Jurisdiction</th>
-              <th className="px-4 py-3">Qualification</th>
-              <th className="px-4 py-3">Sources</th>
+              <th>Activity</th>
+              <th>Status</th>
+              <th>As of</th>
+              <th>Jurisdiction</th>
+              <th>Qualification</th>
+              <th>Sources</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-200 bg-white">
+          <tbody>
             {substance.status_assertions.map((assertion) => {
               const jurisdiction = jurisdictions.find((j) => j.id === assertion.jurisdiction_id);
               const sources = assertion.controlling_source_ids
@@ -41,18 +41,18 @@ export default function StatusMatrix({ substance, documents, jurisdictions }: Pr
                 .filter(Boolean) as SourceDocument[];
               return (
                 <tr key={assertion.id}>
-                  <td className="px-4 py-3 font-medium">{assertion.activity}</td>
-                  <td className="px-4 py-3"><StatusBadge status={assertion} /></td>
-                  <td className="px-4 py-3 whitespace-nowrap">{formatDate(assertion.as_of_date)}</td>
-                  <td className="px-4 py-3">{jurisdiction?.name || assertion.jurisdiction_id}</td>
-                  <td className="px-4 py-3 text-slate-600 max-w-sm">{assertion.qualification || '—'}</td>
-                  <td className="px-4 py-3">
+                  <td className="font-medium">{assertion.activity}</td>
+                  <td><StatusBadge status={assertion} /></td>
+                  <td className="whitespace-nowrap font-mono text-xs">{formatDate(assertion.as_of_date)}</td>
+                  <td>{jurisdiction?.name || assertion.jurisdiction_id}</td>
+                  <td className="text-ink-muted max-w-sm">{assertion.qualification || '—'}</td>
+                  <td>
                     <ul className="space-y-1">
                       {sources.map((doc) => (
                         <li key={doc.id}>
-                          <a href={`/documents/${doc.slug}/`} className="text-orange-600 hover:underline">{doc.title}</a>
+                          <a href={`/documents/${doc.slug}/`} className="text-ink hover:text-accent no-underline decoration-accent/50 hover:decoration-accent">{doc.title}</a>
                           {doc.official_url && (
-                            <a href={doc.official_url} target="_blank" rel="noopener noreferrer" className="ml-2 text-xs text-slate-500 hover:text-orange-600">official ↗</a>
+                            <a href={doc.official_url} target="_blank" rel="noopener noreferrer" className="ml-2 text-xs font-mono text-ink-muted hover:text-accent no-underline">official ↗</a>
                           )}
                         </li>
                       ))}

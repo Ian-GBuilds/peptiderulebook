@@ -26,3 +26,9 @@ pnpm-debug.log*
 # vercel
 .vercel
 .env*
+
+# agent / skill tooling
+.agents/
+.claude/
+.codex/
+.impeccable/

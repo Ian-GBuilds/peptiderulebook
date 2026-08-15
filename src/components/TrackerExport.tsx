@@ -33,13 +33,13 @@ export default function TrackerExport({ rows, columns, name }: Props) {
     <div className="flex gap-2">
       <button
         onClick={() => download(toCsv(), `${name}.csv`, 'text/csv')}
-        className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+        className="btn-secondary text-xs"
       >
         Download CSV
       </button>
       <button
         onClick={() => download(JSON.stringify(rows, null, 2), `${name}.json`, 'application/json')}
-        className="inline-flex items-center rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+        className="btn-secondary text-xs"
       >
         Download JSON
       </button>

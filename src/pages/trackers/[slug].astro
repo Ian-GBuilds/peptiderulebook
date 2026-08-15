@@ -32,28 +32,28 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Dataset(tracker, site)];
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={breadcrumbs} />
     <article class="py-8">
-      <h1 class="text-4xl font-bold text-[#1e293b]">{tracker.name}</h1>
-      <p class="mt-4 text-lg text-slate-700">{tracker.description}</p>
+      <h1 class="text-4xl font-bold text-ink">{tracker.name}</h1>
+      <p class="mt-4 text-lg text-ink-muted">{tracker.description}</p>
       <DisclaimerBanner />
       <div class="mt-6 flex flex-wrap items-center gap-3">
         <TrackerExport client:load rows={tracker.rows} columns={tracker.columns} name={tracker.slug} />
       </div>
 
-      <div class="mt-8 overflow-x-auto rounded-lg border border-slate-200">
+      <div class="mt-8 overflow-x-auto rounded-sm border border-hairline">
         <table class="min-w-full text-sm" aria-label={tracker.name}>
           <caption class="sr-only">{tracker.description}</caption>
-          <thead class="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wider text-slate-600">
+          <thead class="bg-ground text-left text-xs font-semibold uppercase tracking-wider text-ink-muted">
             <tr>
               {tracker.columns.map((col) => (
                 <th class="px-4 py-3">{col.label}</th>
               ))}
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-200 bg-white">
+          <tbody class="divide-y divide-slate-200 bg-paper">
             {tracker.rows.map((row) => (
               <tr>
                 {tracker.columns.map((col) => (
-                  <td class="px-4 py-3 text-slate-700">{row[col.key]}</td>
+                  <td class="px-4 py-3 text-ink-muted">{row[col.key]}</td>
                 ))}
               </tr>
             ))}
@@ -63,9 +63,9 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Dataset(tracker, site)];
 
       <SourceList client:visible sources={relatedDocs} title="Sources" />
 
-      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
-        <div>Last updated: <span class="font-medium text-slate-900">{tracker.last_updated}</span></div>
-        <div>Next update: <span class="font-medium text-slate-900">{tracker.next_update_at}</span></div>
+      <div class="card mt-10 p-5 text-sm text-ink-muted flex flex-wrap gap-6">
+        <div>Last updated: <span class="font-medium text-ink">{tracker.last_updated}</span></div>
+        <div>Next update: <span class="font-medium text-ink">{tracker.next_update_at}</span></div>
       </div>
     </article>
   </div>

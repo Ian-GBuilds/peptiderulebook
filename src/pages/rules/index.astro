@@ -17,8 +17,8 @@ const listLd = ItemList(rules.map((r) => ({
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Rulebook', href: '/rules' }]} />
     <div class="py-10">
-      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Rulebook</h1>
-      <p class="text-slate-600 max-w-3xl">Regulatory rules that determine how peptides can be approved, compounded, marketed, and enforced.</p>
+      <h1 class="text-3xl font-bold text-ink mb-4">Rulebook</h1>
+      <p class="text-ink-muted max-w-3xl">Regulatory rules that determine how peptides can be approved, compounded, marketed, and enforced.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         {rules.map((r) => <RuleCard rule={r} />)}
       </div>

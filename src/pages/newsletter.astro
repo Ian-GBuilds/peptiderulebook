@@ -7,12 +7,12 @@ import NewsletterForm from '../components/NewsletterForm';
   <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Newsletter', href: '/newsletter' }]} />
     <div class="py-12">
-      <h1 class="text-4xl font-bold text-[#1e293b]">Rule Change Alerts</h1>
-      <p class="mt-4 text-lg text-slate-600">One email when a status changes. No marketing, no sponsored content, no unrelated noise.</p>
+      <h1 class="text-4xl font-bold text-ink">Rule Change Alerts</h1>
+      <p class="mt-4 text-lg text-ink-muted">One email when a status changes. No marketing, no sponsored content, no unrelated noise.</p>
       <div class="mt-8">
         <NewsletterForm client:load />
       </div>
-      <p class="mt-6 text-sm text-slate-500">We may use a third-party email provider. You can unsubscribe at any time. See our <a href="/privacy" class="text-orange-600 hover:underline">privacy policy</a>.</p>
+      <p class="mt-6 text-sm text-ink-muted">We may use a third-party email provider. You can unsubscribe at any time. See our <a href="/privacy" class="text-accent hover:underline">privacy policy</a>.</p>
     </div>
   </div>
 </Layout>

@@ -1,1 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Sometype+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
+
+@theme {
+  /* Surface */
+  --color-ground: #F7F4EC;
+  --color-paper: #FDFBF6;
+  --color-ink: #0D1B2A;
+  --color-ink-muted: #4A5568;
+  --color-hairline: #D9D3C6;
+
+  /* Accent */
+  --color-accent: #C84C1B;
+  --color-accent-dark: #9F3A14;
+
+  /* Regulatory stamps */
+  --color-stamp-green: #2A5C46;
+  --color-stamp-green-bg: #E8F0EB;
+  --color-stamp-amber: #9C6F12;
+  --color-stamp-amber-bg: #F5ECD6;
+  --color-stamp-red: #A92525;
+  --color-stamp-red-bg: #F7E5E5;
+  --color-stamp-blue: #2F5C8A;
+  --color-stamp-blue-bg: #E6EEF5;
+
+  /* Typography */
+  --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-mono: 'Sometype Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radii */
+  --radius-card: 2px;
+
+  /* Animation */
+  --animate-reveal: reveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ground text-ink font-sans;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold text-ink tracking-tight;
+  }
+
+  a {
+    @apply text-ink underline underline-offset-4 decoration-accent/50;
+    transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
+  }
+
+  a:hover {
+    @apply decoration-accent;
+  }
+
+  a:not([href]) {
+    @apply no-underline;
+  }
+
+  /* Selection theming */
+  ::selection {
+    @apply bg-accent/20 text-ink;
+  }
+
+  /* Form caret */
+  input, textarea {
+    caret-color: var(--color-accent);
+  }
+
+  /* Focus rings */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/60 ring-offset-2 ring-offset-ground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ground);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-hairline);
+    border-radius: 5px;
+    border: 2px solid var(--color-ground);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-muted);
+  }
+}
+
+@utility card {
+  background-color: var(--color-paper);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  transition: border-color 150ms ease-out, background-color 150ms ease-out;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--color-ink) 25%, transparent);
+    background-color: #ffffff;
+  }
+}
+
+@utility stamp {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: var(--radius-card);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.125rem 0.5rem;
+}
+
+@utility stamp-green {
+  background-color: var(--color-stamp-green-bg);
+  color: var(--color-stamp-green);
+  border-color: color-mix(in srgb, var(--color-stamp-green) 25%, transparent);
+}
+
+@utility stamp-amber {
+  background-color: var(--color-stamp-amber-bg);
+  color: var(--color-stamp-amber);
+  border-color: color-mix(in srgb, var(--color-stamp-amber) 25%, transparent);
+}
+
+@utility stamp-red {
+  background-color: var(--color-stamp-red-bg);
+  color: var(--color-stamp-red);
+  border-color: color-mix(in srgb, var(--color-stamp-red) 25%, transparent);
+}
+
+@utility stamp-blue {
+  background-color: var(--color-stamp-blue-bg);
+  color: var(--color-stamp-blue);
+  border-color: color-mix(in srgb, var(--color-stamp-blue) 25%, transparent);
+}
+
+@utility stamp-neutral {
+  background-color: var(--color-ground);
+  color: var(--color-ink-muted);
+  border-color: var(--color-hairline);
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-card);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 50%, transparent), 0 0 0 4px var(--color-ground);
+  }
+}
+
+@utility btn-primary {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+
+  &:hover {
+    background-color: var(--color-accent-dark);
+  }
+}
+
+@utility btn-secondary {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--color-ink) 30%, transparent);
+    background-color: #ffffff;
+  }
+}
+
+@utility data-table {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border: 1px solid var(--color-hairline);
+
+  & thead {
+    background-color: var(--color-paper);
+    border-bottom: 1px solid var(--color-hairline);
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-muted);
+  }
+
+  & th,
+  & td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+  }
+
+  & tbody tr {
+    border-bottom: 1px solid var(--color-hairline);
+    background-color: var(--color-paper);
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+
+    &:nth-child(even) {
+      background-color: color-mix(in srgb, var(--color-ground) 40%, transparent);
+    }
+  }
+}
+
+@utility meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-muted);
+}
+
+@utility rule {
+  border-top: 1px solid var(--color-hairline);
+}
+
+@utility prose {
+  color: var(--color-ink);
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+
+  & h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  & h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  & p {
+    line-height: 1.625;
+  }
+
+  & ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+  }
+
+  & ol {
+    list-style-type: decimal;
+    padding-left: 1.25rem;
+  }
+
+  & li {
+    line-height: 1.625;
+  }
+
+  & a {
+    color: var(--color-ink);
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+
+    &:hover {
+      text-decoration-color: var(--color-accent);
+    }
+  }
+
+  & .lead {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--color-ink-muted);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .measure {
+    max-width: 70ch;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: var(--animate-reveal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

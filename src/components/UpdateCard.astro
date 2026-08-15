@@ -5,22 +5,22 @@ interface Props {
 }
 const { update } = Astro.props;
 ---
-<article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-  <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+<article class="card p-5">
+  <div class="flex flex-wrap items-center gap-2 text-xs font-mono uppercase tracking-wider text-ink-muted">
     <time datetime={update.publication_date}>{update.publication_date}</time>
-    {update.procedural_status && <span class="rounded bg-slate-100 px-2 py-0.5 font-medium text-slate-700">{update.procedural_status}</span>}
+    {update.procedural_status && <span class="stamp stamp-neutral">{update.procedural_status}</span>}
   </div>
-  <h3 class="mt-2 text-lg font-semibold text-[#1e293b]">
-    <a href={`/updates/${update.slug}/`} class="hover:text-orange-600 hover:underline">{update.title}</a>
+  <h3 class="mt-2 text-lg font-semibold font-serif text-ink">
+    <a href={`/updates/${update.slug}/`} class="no-underline hover:underline decoration-accent">{update.title}</a>
   </h3>
-  <p class="mt-2 text-sm text-slate-700 line-clamp-3">{update.dek}</p>
+  <p class="mt-2 text-sm text-ink-muted line-clamp-3">{update.dek}</p>
   {(update.affected_substance_slugs.length > 0 || update.affected_rule_slugs.length > 0) && (
     <div class="mt-4 flex flex-wrap gap-2 text-xs">
       {update.affected_substance_slugs.map((slug) => (
-        <a href={`/substances/${slug}/`} class="rounded bg-emerald-50 px-2 py-1 text-emerald-700 hover:underline">{slug}</a>
+        <a href={`/substances/${slug}/`} class="stamp stamp-green no-underline">{slug}</a>
       ))}
       {update.affected_rule_slugs.map((slug) => (
-        <a href={`/rules/${slug}/`} class="rounded bg-blue-50 px-2 py-1 text-blue-700 hover:underline">{slug}</a>
+        <a href={`/rules/${slug}/`} class="stamp stamp-blue no-underline">{slug}</a>
       ))}
     </div>
   )}

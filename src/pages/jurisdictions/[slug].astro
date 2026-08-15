@@ -32,24 +32,24 @@ const jsonLd = BreadcrumbList(breadcrumbs);
     <Breadcrumbs items={breadcrumbs} />
     <article class="py-8">
       <div class="flex items-center gap-3 mb-4">
-        <span class="text-xs rounded bg-slate-100 px-2 py-1 text-slate-700 uppercase">{jurisdiction.type}</span>
+        <span class="text-xs rounded bg-ground px-2 py-1 text-ink-muted uppercase">{jurisdiction.type}</span>
         {jurisdiction.review_status !== 'complete' && (
-          <span class="text-xs rounded bg-amber-100 px-2 py-1 text-amber-800 uppercase">{jurisdiction.review_status} review</span>
+          <span class="text-xs rounded bg-stamp-amber-bg px-2 py-1 text-stamp-amber uppercase">{jurisdiction.review_status} review</span>
         )}
       </div>
-      <h1 class="text-4xl font-bold text-[#1e293b]">{jurisdiction.name}</h1>
-      <p class="mt-4 text-lg text-slate-700">{jurisdiction.summary}</p>
-      <p class="mt-4 text-slate-600">{jurisdiction.scope_notes}</p>
+      <h1 class="text-4xl font-bold text-ink">{jurisdiction.name}</h1>
+      <p class="mt-4 text-lg text-ink-muted">{jurisdiction.summary}</p>
+      <p class="mt-4 text-ink-muted">{jurisdiction.scope_notes}</p>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Key agencies</h2>
+        <h2 class="text-xl font-bold text-ink">Key agencies</h2>
         <ul class="mt-4 space-y-2">
           {jurisdiction.key_agencies.map((agency) => (
             <li>
               {agency.url ? (
-                <a href={agency.url} target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:underline">{agency.name} ↗</a>
+                <a href={agency.url} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">{agency.name} ↗</a>
               ) : (
-                <span class="text-slate-700">{agency.name}</span>
+                <span class="text-ink-muted">{agency.name}</span>
               )}
             </li>
           ))}
@@ -58,10 +58,10 @@ const jsonLd = BreadcrumbList(breadcrumbs);
 
       {relatedSubstances.length > 0 && (
         <section class="mt-10">
-          <h2 class="text-xl font-bold text-[#1e293b]">Substances covered</h2>
+          <h2 class="text-xl font-bold text-ink">Substances covered</h2>
           <div class="mt-4 flex flex-wrap gap-2">
             {relatedSubstances.map((s) => (
-              <a href={`/substances/${s.slug}/`} class="rounded bg-emerald-50 px-3 py-1 text-sm text-emerald-700 hover:underline">{s.canonical_name}</a>
+              <a href={`/substances/${s.slug}/`} class="rounded bg-stamp-green-bg px-3 py-1 text-sm text-stamp-green hover:underline">{s.canonical_name}</a>
             ))}
           </div>
         </section>

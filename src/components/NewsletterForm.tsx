@@ -8,7 +8,7 @@ export default function NewsletterForm({ variant = 'card' }: Props) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'ok'>('idle');
 
-  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email.includes('@')) {
       setStatus('ok');
@@ -18,14 +18,14 @@ export default function NewsletterForm({ variant = 'card' }: Props) {
 
   const wrapper = variant === 'inline'
     ? 'flex flex-col sm:flex-row gap-3 items-start sm:items-end'
-    : 'bg-white border border-slate-200 rounded-xl p-6 shadow-sm';
+    : 'card p-6';
 
   return (
     <form onSubmit={handleSubmit} className={wrapper}>
       {variant === 'card' && (
         <div className="mb-4">
-          <h3 className="text-lg font-semibold text-[#1e293b]">Rule Change Alerts</h3>
-          <p className="text-sm text-slate-600 mt-1">Get a short email when peptide statuses, shortages, or compounding rules change.</p>
+          <h3 className="text-lg font-semibold font-serif text-ink">Rule Change Alerts</h3>
+          <p className="text-sm text-ink-muted mt-1">Get a short email when peptide statuses, shortages, or compounding rules change.</p>
         </div>
       )}
       <label className="flex-1 w-full">
@@ -36,16 +36,16 @@ export default function NewsletterForm({ variant = 'card' }: Props) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@example.com"
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
+          className="w-full rounded-sm border border-hairline bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/40"
         />
       </label>
       <button
         type="submit"
-        className="w-full sm:w-auto inline-flex justify-center rounded-md bg-orange-600 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+        className="btn-primary w-full sm:w-auto"
       >
         Get Rule Change Alerts
       </button>
-      {status === 'ok' && <p className="text-sm text-emerald-700" role="status">Thanks — we’ll email you when rules change.</p>}
+      {status === 'ok' && <p className="text-sm text-stamp-green" role="status">Thanks — we’ll email you when rules change.</p>}
     </form>
   );
 }

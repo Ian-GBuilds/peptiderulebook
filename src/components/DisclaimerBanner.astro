@@ -4,7 +4,7 @@ interface Props {
 }
 const { variant = 'inline' } = Astro.props;
 ---
-<div class={`rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 ${variant === 'page' ? 'my-8' : 'my-6'}`}>
-  <p class="font-medium">Not legal or medical advice.</p>
-  <p class="mt-1">This page is for informational purposes only. Always verify the current official source or consult a qualified professional before making compliance, prescribing, purchasing, or clinical decisions. <a href="/disclaimer" class="underline hover:text-amber-700">Read full disclaimer</a>.</p>
+<div class={`bg-stamp-amber-bg border border-stamp-amber/30 p-4 text-sm text-ink ${variant === 'page' ? 'my-8' : 'my-6'}`}>
+  <p class="font-semibold">Not legal or medical advice.</p>
+  <p class="mt-1 text-ink-muted">This page is for informational purposes only. Always verify the current official source or consult a qualified professional before making compliance, prescribing, purchasing, or clinical decisions. <a href="/disclaimer" class="text-ink underline underline-offset-2 decoration-ink/30 hover:decoration-accent">Read full disclaimer</a>.</p>
 </div>

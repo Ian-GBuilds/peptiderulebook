@@ -43,60 +43,60 @@ const jsonLd = [BreadcrumbList(breadcrumbs), NewsArticle(update, site)];
     <Breadcrumbs items={breadcrumbs} />
     <article class="py-8">
       {update.hero_image && (
-        <img src={update.hero_image} alt={update.hero_alt || ''} class="w-full h-48 md:h-64 object-cover rounded-xl mb-8" />
+        <img src={update.hero_image} alt={update.hero_alt || ''} class="w-full h-48 md:h-64 object-cover rounded-sm mb-8" />
       )}
       <div class="flex flex-wrap gap-2 text-sm">
-        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{update.procedural_status}</span>
+        <span class="rounded bg-ground px-2 py-1 text-ink-muted">{update.procedural_status}</span>
       </div>
-      <h1 class="mt-4 text-4xl font-bold text-[#1e293b]">{update.title}</h1>
-      <p class="mt-4 text-xl text-slate-600">{update.dek}</p>
-      <div class="mt-4 flex flex-wrap gap-4 text-sm text-slate-500">
+      <h1 class="mt-4 text-4xl font-bold text-ink">{update.title}</h1>
+      <p class="mt-4 text-xl text-ink-muted">{update.dek}</p>
+      <div class="mt-4 flex flex-wrap gap-4 text-sm text-ink-muted">
         {update.event_date && <span>Event: {update.event_date}</span>}
         <span>Published: {update.publication_date}</span>
         {update.effective_date && <span>Effective: {update.effective_date}</span>}
       </div>
 
-      <p class="mt-8 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{update.direct_answer}</p>
+      <p class="mt-8 text-lg font-medium text-stamp-green bg-stamp-green-bg border border-stamp-green/20 rounded-sm p-4">{update.direct_answer}</p>
       <DisclaimerBanner />
 
-      <div class="mt-8 prose prose-slate max-w-none" set:html={update.body} />
+      <div class="mt-8 prose max-w-none" set:html={update.body} />
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Key takeaways</h2>
+        <h2 class="text-xl font-bold text-ink">Key takeaways</h2>
         <ul class="mt-4 space-y-2">
           {update.key_takeaways.map((takeaway) => (
-            <li class="flex gap-2"><span class="text-emerald-500">✓</span> <span class="text-slate-700">{takeaway}</span></li>
+            <li class="flex gap-2"><span class="text-stamp-green">✓</span> <span class="text-ink-muted">{takeaway}</span></li>
           ))}
         </ul>
       </section>
 
       <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h2 class="text-xl font-bold text-[#1e293b]">What changed</h2>
-          <p class="mt-2 text-slate-700">{update.what_changed}</p>
+          <h2 class="text-xl font-bold text-ink">What changed</h2>
+          <p class="mt-2 text-ink-muted">{update.what_changed}</p>
         </div>
         <div>
-          <h2 class="text-xl font-bold text-[#1e293b]">What did not change</h2>
-          <p class="mt-2 text-slate-700">{update.what_did_not_change}</p>
+          <h2 class="text-xl font-bold text-ink">What did not change</h2>
+          <p class="mt-2 text-ink-muted">{update.what_did_not_change}</p>
         </div>
       </section>
 
       {update.next_step && (
         <section class="mt-10">
-          <h2 class="text-xl font-bold text-[#1e293b]">Next step</h2>
-          <p class="mt-2 text-slate-700">{update.next_step}</p>
+          <h2 class="text-xl font-bold text-ink">Next step</h2>
+          <p class="mt-2 text-ink-muted">{update.next_step}</p>
         </section>
       )}
 
       {(affectedSubstances.length > 0 || affectedRules.length > 0) && (
         <section class="mt-10">
-          <h2 class="text-xl font-bold text-[#1e293b]">Affected records</h2>
+          <h2 class="text-xl font-bold text-ink">Affected records</h2>
           <div class="mt-4 flex flex-wrap gap-2">
             {affectedSubstances.map((s) => (
-              <a href={`/substances/${s.slug}/`} class="rounded bg-emerald-50 px-3 py-1 text-sm text-emerald-700 hover:underline">{s.canonical_name}</a>
+              <a href={`/substances/${s.slug}/`} class="rounded bg-stamp-green-bg px-3 py-1 text-sm text-stamp-green hover:underline">{s.canonical_name}</a>
             ))}
             {affectedRules.map((r) => (
-              <a href={`/rules/${r.slug}/`} class="rounded bg-blue-50 px-3 py-1 text-sm text-blue-700 hover:underline">{r.name}</a>
+              <a href={`/rules/${r.slug}/`} class="rounded bg-stamp-blue-bg px-3 py-1 text-sm text-stamp-blue hover:underline">{r.name}</a>
             ))}
           </div>
         </section>
@@ -106,23 +106,23 @@ const jsonLd = [BreadcrumbList(breadcrumbs), NewsArticle(update, site)];
 
       {update.faq_items && update.faq_items.length > 0 && (
         <section class="mt-10">
-          <h2 class="text-xl font-bold text-[#1e293b]">Frequently asked questions</h2>
+          <h2 class="text-xl font-bold text-ink">Frequently asked questions</h2>
           <dl class="mt-4 space-y-4">
             {update.faq_items.map((faq) => (
-              <div class="rounded-lg border border-slate-200 bg-white p-4">
-                <dt class="font-semibold text-[#1e293b]">{faq.question}</dt>
-                <dd class="mt-2 text-slate-700">{faq.answer}</dd>
+              <div class="card p-4">
+                <dt class="font-semibold text-ink">{faq.question}</dt>
+                <dd class="mt-2 text-ink-muted">{faq.answer}</dd>
               </div>
             ))}
           </dl>
         </section>
       )}
 
-      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
-        <div>Author: <span class="font-medium text-slate-900">{author?.name || update.author_id}</span></div>
-        {factChecker && <div>Fact checker: <span class="font-medium text-slate-900">{factChecker.name}</span></div>}
-        {legalReviewer && <div>Legal reviewer: <span class="font-medium text-slate-900">{legalReviewer.name}</span></div>}
-        <div>Last verified: <span class="font-medium text-slate-900">{update.last_verified}</span></div>
+      <div class="card mt-10 p-5 text-sm text-ink-muted flex flex-wrap gap-6">
+        <div>Author: <span class="font-medium text-ink">{author?.name || update.author_id}</span></div>
+        {factChecker && <div>Fact checker: <span class="font-medium text-ink">{factChecker.name}</span></div>}
+        {legalReviewer && <div>Legal reviewer: <span class="font-medium text-ink">{legalReviewer.name}</span></div>}
+        <div>Last verified: <span class="font-medium text-ink">{update.last_verified}</span></div>
       </div>
     </article>
   </div>

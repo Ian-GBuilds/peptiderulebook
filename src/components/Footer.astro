@@ -6,27 +6,27 @@ const columns = [
   { title: 'Legal', links: site.footer_nav.filter((n) => ['Disclaimer', 'Privacy', 'Terms'].includes(n.label)) },
 ];
 ---
-<footer class="bg-slate-50 border-t border-slate-200 mt-16">
+<footer class="bg-paper border-t border-hairline mt-16">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="md:col-span-1">
-        <a href="/" class="text-xl font-bold text-[#1e293b]"><span class="text-orange-500">Peptide</span> Rulebook</a>
-        <p class="mt-3 text-sm text-slate-600">{site.tagline}</p>
+        <a href="/" class="text-xl font-bold font-serif text-ink no-underline"><span class="text-accent">Peptide</span> Rulebook</a>
+        <p class="mt-3 text-sm text-ink-muted">{site.tagline}</p>
       </div>
       {columns.map((col) => (
         <div>
-          <h3 class="text-sm font-semibold text-[#1e293b] uppercase tracking-wider">{col.title}</h3>
+          <h3 class="text-xs font-mono font-semibold text-ink uppercase tracking-wider">{col.title}</h3>
           <ul class="mt-4 space-y-2">
             {col.links.map((link) => (
-              <li><a href={link.href} class="text-sm text-slate-600 hover:text-orange-600">{link.label}</a></li>
+              <li><a href={link.href} class="text-sm text-ink-muted hover:text-ink no-underline decoration-transparent hover:decoration-accent">{link.label}</a></li>
             ))}
           </ul>
         </div>
       ))}
     </div>
-    <div class="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-4">
+    <div class="mt-10 pt-6 border-t border-hairline text-sm text-ink-muted flex flex-col sm:flex-row justify-between gap-4">
       <p>© {new Date().getFullYear()} {site.name}. Not legal or medical advice.</p>
-      <p>Last updated from source-linked records.</p>
+      <p class="font-mono text-xs uppercase tracking-wider">Last updated from source-linked records.</p>
     </div>
   </div>
 </footer>

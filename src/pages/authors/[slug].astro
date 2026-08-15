@@ -26,19 +26,19 @@ const jsonLd = [BreadcrumbList(breadcrumbs), ProfilePage(author, site)];
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={breadcrumbs} />
     <article class="py-10">
-      <h1 class="text-4xl font-bold text-[#1e293b]">{author.name}</h1>
-      <p class="mt-2 text-lg text-orange-600">{author.role}</p>
-      <p class="mt-6 text-lg text-slate-700">{author.bio}</p>
+      <h1 class="text-4xl font-bold text-ink">{author.name}</h1>
+      <p class="mt-2 text-lg text-accent">{author.role}</p>
+      <p class="mt-6 text-lg text-ink-muted">{author.bio}</p>
       {author.credentials && (
         <div class="mt-6">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Credentials</h2>
-          <p class="mt-1 text-slate-700">{author.credentials}</p>
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-ink-muted">Credentials</h2>
+          <p class="mt-1 text-ink-muted">{author.credentials}</p>
         </div>
       )}
       {author.conflicts && (
         <div class="mt-6">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Conflicts of interest</h2>
-          <p class="mt-1 text-slate-700">{author.conflicts}</p>
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-ink-muted">Conflicts of interest</h2>
+          <p class="mt-1 text-ink-muted">{author.conflicts}</p>
         </div>
       )}
     </article>

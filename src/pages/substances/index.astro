@@ -27,10 +27,10 @@ const listLd = ItemList(substances.map((s) => ({
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Substances', href: '/substances' }]} />
     <div class="py-10">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <h1 class="text-3xl font-bold text-[#1e293b]">Substance status</h1>
+        <h1 class="text-3xl font-bold text-ink">Substance status</h1>
         <SearchModal client:load index={searchIndex} />
       </div>
-      <p class="text-slate-600 max-w-3xl">Each record shows the current regulatory status for a peptide, including controlling sources, as-of dates, and what the status does and does not mean.</p>
+      <p class="text-ink-muted max-w-3xl">Each record shows the current regulatory status for a peptide, including controlling sources, as-of dates, and what the status does and does not mean.</p>
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {substances.map((s) => <SubstanceCard substance={s} />)}
       </div>

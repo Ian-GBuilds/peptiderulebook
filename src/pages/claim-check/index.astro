@@ -17,8 +17,8 @@ const listLd = ItemList(claims.map((c) => ({
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Claim Check', href: '/claim-check' }]} />
     <div class="py-10">
-      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Claim check</h1>
-      <p class="text-slate-600 max-w-3xl">We review common claims about peptide regulation and show the correct wording with controlling sources.</p>
+      <h1 class="text-3xl font-bold text-ink mb-4">Claim check</h1>
+      <p class="text-ink-muted max-w-3xl">We review common claims about peptide regulation and show the correct wording with controlling sources.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         {claims.map((c) => <ClaimCard claim={c} />)}
       </div>

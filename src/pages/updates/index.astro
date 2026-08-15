@@ -17,8 +17,8 @@ const listLd = ItemList(updates.map((u) => ({
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Updates', href: '/updates' }]} />
     <div class="py-10">
-      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Updates</h1>
-      <p class="text-slate-600 max-w-3xl">Source-linked updates on what changed, what did not change, and what to watch next.</p>
+      <h1 class="text-3xl font-bold text-ink mb-4">Updates</h1>
+      <p class="text-ink-muted max-w-3xl">Source-linked updates on what changed, what did not change, and what to watch next.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {updates.map((u) => <UpdateCard update={u} />)}
       </div>

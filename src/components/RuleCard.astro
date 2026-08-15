@@ -5,13 +5,13 @@ interface Props {
 }
 const { rule } = Astro.props;
 ---
-<article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-  <h3 class="text-lg font-semibold text-[#1e293b]">
-    <a href={`/rules/${rule.slug}/`} class="hover:text-orange-600 hover:underline">{rule.name}</a>
+<article class="card p-5">
+  <h3 class="text-lg font-semibold font-serif text-ink">
+    <a href={`/rules/${rule.slug}/`} class="no-underline hover:underline decoration-accent">{rule.name}</a>
   </h3>
-  <p class="mt-2 text-sm text-slate-700 line-clamp-3">{rule.direct_answer}</p>
+  <p class="mt-2 text-sm text-ink-muted line-clamp-3">{rule.direct_answer}</p>
   <div class="mt-4 flex flex-wrap gap-2 text-xs">
-    <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.jurisdiction}</span>
-    <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.authority_type}</span>
+    <span class="stamp stamp-neutral">{rule.jurisdiction}</span>
+    <span class="stamp stamp-neutral">{rule.authority_type}</span>
   </div>
 </article>

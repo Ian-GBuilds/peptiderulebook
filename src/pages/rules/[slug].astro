@@ -57,35 +57,35 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/rules/
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <Breadcrumbs items={breadcrumbs} />
     <article class="py-8">
-      <h1 class="text-4xl font-bold text-[#1e293b]">{rule.name}</h1>
+      <h1 class="text-4xl font-bold text-ink">{rule.name}</h1>
       <div class="mt-4 flex flex-wrap gap-2 text-sm">
-        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.jurisdiction}</span>
-        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.authority_type}</span>
-        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">Scope: {rule.scope}</span>
+        <span class="rounded bg-ground px-2 py-1 text-ink-muted">{rule.jurisdiction}</span>
+        <span class="rounded bg-ground px-2 py-1 text-ink-muted">{rule.authority_type}</span>
+        <span class="rounded bg-ground px-2 py-1 text-ink-muted">Scope: {rule.scope}</span>
       </div>
-      <p class="mt-6 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{rule.direct_answer}</p>
+      <p class="mt-6 text-lg font-medium text-stamp-green bg-stamp-green-bg border border-stamp-green/20 rounded-sm p-4">{rule.direct_answer}</p>
       <DisclaimerBanner />
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Who this applies to</h2>
-        <p class="mt-2 text-slate-700">{rule.scope}</p>
+        <h2 class="text-xl font-bold text-ink">Who this applies to</h2>
+        <p class="mt-2 text-ink-muted">{rule.scope}</p>
       </section>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Definitions</h2>
+        <h2 class="text-xl font-bold text-ink">Definitions</h2>
         <dl class="mt-4 space-y-4">
           {rule.definitions.map((def) => (
-            <div class="rounded-lg border border-slate-200 bg-white p-4">
-              <dt class="font-semibold text-[#1e293b]">{def.term}</dt>
-              <dd class="mt-1 text-slate-700">{def.definition}</dd>
+            <div class="card p-4">
+              <dt class="font-semibold text-ink">{def.term}</dt>
+              <dd class="mt-1 text-ink-muted">{def.definition}</dd>
             </div>
           ))}
         </dl>
       </section>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Decision flow</h2>
-        <ol class="mt-4 list-decimal list-inside space-y-2 text-slate-700">
+        <h2 class="text-xl font-bold text-ink">Decision flow</h2>
+        <ol class="mt-4 list-decimal list-inside space-y-2 text-ink-muted">
           {rule.decision_logic.split(/\d+\./).filter(Boolean).map((step) => (
             <li>{step.trim()}</li>
           ))}
@@ -93,34 +93,34 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/rules/
       </section>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Examples</h2>
+        <h2 class="text-xl font-bold text-ink">Examples</h2>
         <ul class="mt-4 space-y-2">
           {rule.examples.map((ex) => (
-            <li class="flex gap-2"><span class="text-emerald-500">•</span> <span class="text-slate-700">{ex}</span></li>
+            <li class="flex gap-2"><span class="text-stamp-green">•</span> <span class="text-ink-muted">{ex}</span></li>
           ))}
         </ul>
       </section>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">Common mistakes / limitations</h2>
+        <h2 class="text-xl font-bold text-ink">Common mistakes / limitations</h2>
         <ul class="mt-4 space-y-2">
           {rule.limitations.map((lim) => (
-            <li class="flex gap-2"><span class="text-orange-500">✗</span> <span class="text-slate-700">{lim}</span></li>
+            <li class="flex gap-2"><span class="text-accent">✗</span> <span class="text-ink-muted">{lim}</span></li>
           ))}
         </ul>
       </section>
 
       <section class="mt-10">
-        <h2 class="text-xl font-bold text-[#1e293b]">What can change this answer</h2>
-        <p class="mt-2 text-slate-700">Rules can change through new legislation, FDA final guidance, declaratory orders, court decisions, or updated bulk-drug-substance lists. Check the latest controlling sources and the update feed for this rule.</p>
+        <h2 class="text-xl font-bold text-ink">What can change this answer</h2>
+        <p class="mt-2 text-ink-muted">Rules can change through new legislation, FDA final guidance, declaratory orders, court decisions, or updated bulk-drug-substance lists. Check the latest controlling sources and the update feed for this rule.</p>
       </section>
 
       <SourceList client:visible sources={relatedDocs} title="Controlling law and sources" />
 
-      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
-        <div>Last verified: <span class="font-medium text-slate-900">{rule.last_verified}</span></div>
-        <div>Legal reviewer: <span class="font-medium text-slate-900">{reviewer?.name || rule.legal_reviewer_id}</span></div>
-        <div>Next review: <span class="font-medium text-slate-900">{rule.next_review_at}</span></div>
+      <div class="card mt-10 p-5 text-sm text-ink-muted flex flex-wrap gap-6">
+        <div>Last verified: <span class="font-medium text-ink">{rule.last_verified}</span></div>
+        <div>Legal reviewer: <span class="font-medium text-ink">{reviewer?.name || rule.legal_reviewer_id}</span></div>
+        <div>Next review: <span class="font-medium text-ink">{rule.next_review_at}</span></div>
       </div>
     </article>
   </div>
