@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import { getDocuments, getDocumentBySlug } from '../../data/adapter';
 import { BreadcrumbList } from '../../lib/jsonld';
 
@@ -27,6 +28,7 @@ const jsonLd = BreadcrumbList(breadcrumbs);
     <article class="py-8">
       <h1 class="text-4xl font-bold text-[#1e293b]">{document.title}</h1>
       <p class="mt-4 text-lg text-slate-700">{document.plain_language_summary}</p>
+      <DisclaimerBanner />
       <div class="mt-6 flex flex-wrap gap-2 text-sm">
         <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{document.issuing_body}</span>
         <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{document.document_type}</span>

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SourceList from '../../components/SourceList';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import { getClaimChecks, getClaimCheckBySlug, getDocuments, getAuthors, getSubstances, getRules } from '../../data/adapter';
 import { BreadcrumbList, Article } from '../../lib/jsonld';
 import site from '../../content/config/site.json';
@@ -84,6 +85,7 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/claim-
         <h2 class="text-sm font-semibold uppercase tracking-wide text-emerald-800">Correct wording</h2>
         <p class="mt-2 text-lg font-medium text-emerald-900">{claim.correct_wording}</p>
       </div>
+      <DisclaimerBanner />
 
       <section class="mt-10">
         <h2 class="text-xl font-bold text-[#1e293b]">Why this is confusing</h2>

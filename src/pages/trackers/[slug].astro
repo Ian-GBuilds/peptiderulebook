@@ -5,6 +5,7 @@ import SourceList from '../../components/SourceList';
 import { getTrackers, getTrackerBySlug, getDocuments } from '../../data/adapter';
 import { BreadcrumbList, Dataset } from '../../lib/jsonld';
 import TrackerExport from '../../components/TrackerExport';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import site from '../../content/config/site.json';
 
 export async function getStaticPaths() {
@@ -33,6 +34,7 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Dataset(tracker, site)];
     <article class="py-8">
       <h1 class="text-4xl font-bold text-[#1e293b]">{tracker.name}</h1>
       <p class="mt-4 text-lg text-slate-700">{tracker.description}</p>
+      <DisclaimerBanner />
       <div class="mt-6 flex flex-wrap items-center gap-3">
         <TrackerExport client:load rows={tracker.rows} columns={tracker.columns} name={tracker.slug} />
       </div>

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SourceList from '../../components/SourceList';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import { getUpdates, getUpdateBySlug, getDocuments, getAuthors, getSubstances, getRules } from '../../data/adapter';
 import { BreadcrumbList, NewsArticle } from '../../lib/jsonld';
 import site from '../../content/config/site.json';
@@ -56,6 +57,7 @@ const jsonLd = [BreadcrumbList(breadcrumbs), NewsArticle(update, site)];
       </div>
 
       <p class="mt-8 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{update.direct_answer}</p>
+      <DisclaimerBanner />
 
       <div class="mt-8 prose prose-slate max-w-none" set:html={update.body} />
 

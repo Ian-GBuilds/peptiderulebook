@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SourceList from '../../components/SourceList';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import { getRules, getRuleBySlug, getDocuments, getAuthors } from '../../data/adapter';
 import { BreadcrumbList, Article } from '../../lib/jsonld';
 import site from '../../content/config/site.json';
@@ -63,6 +64,7 @@ const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/rules/
         <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">Scope: {rule.scope}</span>
       </div>
       <p class="mt-6 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{rule.direct_answer}</p>
+      <DisclaimerBanner />
 
       <section class="mt-10">
         <h2 class="text-xl font-bold text-[#1e293b]">Who this applies to</h2>
