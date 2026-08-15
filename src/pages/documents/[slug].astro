@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getDocuments, getDocumentBySlug } from '../../data/adapter';
+import { BreadcrumbList } from '../../lib/jsonld';
+
+export async function getStaticPaths() {
+  const documents = await getDocuments();
+  return documents.map((d) => ({ params: { slug: d.slug } }));
+}
+
+const { slug } = Astro.params;
+const document = await getDocumentBySlug(slug);
+if (!document) return Astro.redirect('/404');
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Documents', href: '/documents' },
+  { label: document.title, href: `/documents/${document.slug}/` },
+];
+
+const jsonLd = BreadcrumbList(breadcrumbs);
+---
+<Layout title={document.title} description={document.plain_language_summary} canonical={`/documents/${document.slug}`} jsonLd={jsonLd}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="py-8">
+      <h1 class="text-4xl font-bold text-[#1e293b]">{document.title}</h1>
+      <p class="mt-4 text-lg text-slate-700">{document.plain_language_summary}</p>
+      <div class="mt-6 flex flex-wrap gap-2 text-sm">
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{document.issuing_body}</span>
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{document.document_type}</span>
+        {document.current_status && <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{document.current_status}</span>}
+      </div>
+
+      <dl class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        {document.docket_or_citation && <div><dt class="font-semibold text-slate-500">Docket / Citation</dt><dd class="text-slate-900">{document.docket_or_citation}</dd></div>}
+        {document.publication_date && <div><dt class="font-semibold text-slate-500">Published</dt><dd class="text-slate-900">{document.publication_date}</dd></div>}
+        {document.effective_date && <div><dt class="font-semibold text-slate-500">Effective</dt><dd class="text-slate-900">{document.effective_date}</dd></div>}
+        {document.expiration_date && <div><dt class="font-semibold text-slate-500">Expires</dt><dd class="text-slate-900">{document.expiration_date}</dd></div>}
+        {document.withdrawn_date && <div><dt class="font-semibold text-slate-500">Withdrawn</dt><dd class="text-slate-900">{document.withdrawn_date}</dd></div>}
+      </dl>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        {document.official_url && (
+          <a href={document.official_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md bg-orange-600 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-700">Official page ↗</a>
+        )}
+        {document.official_pdf_url && (
+          <a href={document.official_pdf_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">PDF ↗</a>
+        )}
+        {document.archive_url && (
+          <a href={document.archive_url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Archive ↗</a>
+        )}
+      </div>
+
+      {document.provisions && document.provisions.length > 0 && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Provisions</h2>
+          <ul class="mt-4 space-y-2">
+            {document.provisions.map((p) => (
+              <li class="text-slate-700">{p}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </div>
+</Layout>

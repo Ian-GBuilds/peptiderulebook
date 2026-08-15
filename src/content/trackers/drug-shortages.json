@@ -1,0 +1,50 @@
+{
+  "id": "drug-shortage",
+  "slug": "drug-shortages",
+  "name": "Drug-shortage tracker",
+  "description": "National shortage status and effective dates for FDA-approved peptide products.",
+  "columns": [
+    {
+      "key": "product",
+      "label": "Product"
+    },
+    {
+      "key": "active",
+      "label": "Active ingredient"
+    },
+    {
+      "key": "status",
+      "label": "Shortage status"
+    },
+    {
+      "key": "resolved_date",
+      "label": "Resolved date"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    }
+  ],
+  "rows": [
+    {
+      "product": "Mounjaro / Zepbound",
+      "active": "Tirzepatide",
+      "status": "Resolved",
+      "resolved_date": "2024-12-19",
+      "source": "FDA declaratory order"
+    },
+    {
+      "product": "Ozempic / Wegovy",
+      "active": "Semaglutide",
+      "status": "Resolved",
+      "resolved_date": "2025-02-21",
+      "source": "FDA declaratory order"
+    }
+  ],
+  "source_ids": [
+    "fda-tirzepatide-shortage-order-2024",
+    "fda-semaglutide-shortage-order-2025"
+  ],
+  "last_updated": "2025-03-01",
+  "next_update_at": "2025-06-01"
+}

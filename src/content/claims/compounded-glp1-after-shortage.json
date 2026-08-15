@@ -1,0 +1,27 @@
+{
+  "id": "compounded-glp1-after-shortage",
+  "slug": "compounded-glp1-after-shortage",
+  "title": "Are compounded GLP-1 products still allowed after shortage resolution?",
+  "claim": "Compounded tirzepatide and semaglutide are still legal now that the shortages are over.",
+  "verdict": "partly accurate",
+  "correct_wording": "FDA resolved the national shortages of tirzepatide (Dec. 19, 2024) and semaglutide (Feb. 21, 2025). After transition periods, compounded copies are generally subject to the usual 503A/503B copy restrictions; local stock-outs do not create a continuing shortage.",
+  "controlling_source_ids": [
+    "fda-tirzepatide-shortage-order-2024",
+    "fda-semaglutide-shortage-order-2025"
+  ],
+  "date": "2025-02-21",
+  "jurisdiction": "U.S. federal",
+  "why_confusion": "Patients may still see intermittent pharmacy stock issues and mistakenly believe the national shortage continues.",
+  "affected_substance_slugs": [
+    "tirzepatide",
+    "semaglutide"
+  ],
+  "affected_rule_slugs": [
+    "drug-shortages",
+    "503a",
+    "503b"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "last_verified": "2025-03-01"
+}

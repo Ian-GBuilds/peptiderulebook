@@ -1,0 +1,82 @@
+{
+  "id": "ipamorelin",
+  "slug": "ipamorelin",
+  "canonical_name": "Ipamorelin",
+  "synonyms": [
+    "Ipamorelin acetate",
+    "NNC 26-0091"
+  ],
+  "identity_notes": "A synthetic pentapeptide growth hormone secretagogue. No USAN or USP/NF monograph; not a component of an FDA-approved drug.",
+  "status_assertions": [
+    {
+      "id": "ipamorelin-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-approved",
+      "status_label": "Not an approved drug",
+      "qualification": "No FDA-approved application is in effect for ipamorelin.",
+      "controlling_source_ids": [
+        "fda-ipamorelin-briefing-2024"
+      ],
+      "as_of_date": "2024-10-29",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "ipamorelin-503a",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A pharmacy compounding",
+      "status_value": "not-listed",
+      "status_label": "Not on 503A bulk list",
+      "qualification": "FDA's advisory committee reviewed ipamorelin-related bulk substances in October 2024 and recommended against placing them on the 503A bulk list. Nominations were withdrawn.",
+      "controlling_source_ids": [
+        "fda-ipamorelin-briefing-2024"
+      ],
+      "as_of_date": "2024-10-29",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "ipamorelin-503b",
+      "jurisdiction_id": "us-federal",
+      "activity": "503B outsourcing-facility compounding",
+      "status_value": "safety-risk",
+      "status_label": "Ipamorelin acetate in Category 2 — significant safety risk",
+      "qualification": "FDA placed ipamorelin acetate in 503B Category 2. It is not on the 503B bulk list for lawful compounding.",
+      "controlling_source_ids": [
+        "fda-503b-bulk-list-2025"
+      ],
+      "as_of_date": "2025-03-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-10-29",
+      "title": "PCAC reviews ipamorelin",
+      "description": "Advisory committee discussed ipamorelin-related bulk substances; FDA recommended against inclusion on the 503A bulk list.",
+      "source_ids": [
+        "fda-ipamorelin-briefing-2024"
+      ],
+      "procedural_status": "advisory"
+    }
+  ],
+  "document_ids": [
+    "fda-ipamorelin-briefing-2024",
+    "fda-503b-bulk-list-2025"
+  ],
+  "rule_ids": [
+    "503a",
+    "503b"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

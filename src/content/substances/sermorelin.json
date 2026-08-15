@@ -1,0 +1,76 @@
+{
+  "id": "sermorelin",
+  "slug": "sermorelin",
+  "canonical_name": "Sermorelin",
+  "synonyms": [
+    "Sermorelin acetate",
+    "Geref"
+  ],
+  "identity_notes": "A growth hormone-releasing hormone analog. Geref (sermorelin acetate) was FDA approved but is discontinued from marketing per Drugs@FDA. It remains a component of a previously approved drug.",
+  "status_assertions": [
+    {
+      "id": "sermorelin-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-currently-marketed",
+      "status_label": "Approved product discontinued from marketing",
+      "qualification": "Geref (sermorelin acetate) was approved in 1990 but is listed as discontinued from marketing in Drugs@FDA. No currently marketed FDA-approved sermorelin product was identified.",
+      "controlling_source_ids": [
+        "fda-xcel-warning-letter-2024"
+      ],
+      "as_of_date": "2024-12-10",
+      "confidence": "medium",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "sermorelin-503b",
+      "jurisdiction_id": "us-federal",
+      "activity": "503B outsourcing-facility compounding",
+      "status_value": "component-approved",
+      "status_label": "Component of FDA-approved drug (Category 1**)",
+      "qualification": "Sermorelin acetate appears in FDA's 503B Category 1 list marked as a component of an FDA-approved drug. Other 503B conditions, including the 'not essentially a copy' restriction, still apply.",
+      "controlling_source_ids": [
+        "fda-503b-bulk-list-2025"
+      ],
+      "as_of_date": "2025-03-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1990-12-28",
+      "title": "Geref approved",
+      "description": "FDA approved Geref (sermorelin acetate) for evaluating pituitary growth hormone reserve.",
+      "source_ids": [
+        "fda-xcel-warning-letter-2024"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2024-12-10",
+      "title": "FDA warning letter cites sermorelin products",
+      "description": "Xcel Research warning letter states sermorelin products marketed online are unapproved new drugs.",
+      "source_ids": [
+        "fda-xcel-warning-letter-2024"
+      ],
+      "procedural_status": "enforcement action recorded"
+    }
+  ],
+  "document_ids": [
+    "fda-xcel-warning-letter-2024",
+    "fda-503b-bulk-list-2025"
+  ],
+  "rule_ids": [
+    "fda-approval",
+    "503b"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

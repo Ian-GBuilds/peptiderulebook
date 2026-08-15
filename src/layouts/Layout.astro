@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import site from '../content/config/site.json';
+import { makeTitle, makeDescription, makeCanonical } from '../lib/seo';
+import JsonLd from '../components/JsonLd.astro';
+import { Organization, WebSite } from '../lib/jsonld';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { title, description, canonical, image, type = 'website', jsonLd, noindex } = Astro.props;
+const pageTitle = makeTitle(title, site.name);
+const pageDescription = makeDescription(description, site.description);
+const pageCanonical = makeCanonical(canonical ?? Astro.url.pathname, site.url);
+const pageImage = image || `${site.url}/favicon.svg`;
+const defaultLd = [Organization(site), WebSite(site)];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={pageCanonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={pageCanonical} />
+    <meta property="og:image" content={pageImage} />
+    <meta property="og:site_name" content={site.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={pageImage} />
+    {site.twitter && <meta name="twitter:site" content={site.twitter} />}
+    <JsonLd data={[...defaultLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])]} />
+  </head>
+  <body class="bg-stone-50 text-[#1e293b] min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

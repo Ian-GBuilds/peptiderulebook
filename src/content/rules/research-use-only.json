@@ -1,0 +1,33 @@
+{
+  "id": "research-use-only",
+  "slug": "research-use-only",
+  "name": "Research-use-only labels",
+  "jurisdiction": "us-federal",
+  "authority_type": "FD&C Act; FDA enforcement",
+  "scope": "Products sold online or to consumers with 'research use only' or 'not for human use' labeling",
+  "direct_answer": "A 'research use only' label does not make an unapproved drug lawful for human use. FDA evaluates the seller's intended use, including website claims, to determine whether the product is a drug intended for human use.",
+  "definitions": [
+    {
+      "term": "Intended use",
+      "definition": "The objective intent of the seller, shown by claims, labeling, and surrounding circumstances."
+    },
+    {
+      "term": "New drug",
+      "definition": "A drug that is not generally recognized as safe and effective for its labeled uses and that lacks an approved application."
+    }
+  ],
+  "decision_logic": "1. Does the seller make disease/treatment claims? 2. Are dosage forms, routes, or patient populations described? 3. If yes, FDA may consider the product an unapproved new drug regardless of a research-only disclaimer. 4. A research-only peptide marketed for human disease treatment is not shielded.",
+  "examples": [
+    "FDA's Xcel Research warning letter stated that retatrutide and sermorelin products labeled 'FOR RESEARCH USE ONLY' were still unapproved new drugs because website claims showed intended human use."
+  ],
+  "limitations": [
+    "This page addresses U.S. FDA interpretation; state and international rules may differ.",
+    "It does not apply to legitimate laboratory reagents sold to qualified researchers without human-use claims."
+  ],
+  "controlling_source_ids": [
+    "fda-xcel-warning-letter-2024"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

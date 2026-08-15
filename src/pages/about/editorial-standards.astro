@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+<Layout title="Editorial Standards" description="Peptide Rulebook editorial standards for sourcing, review, corrections, and independence." canonical="/about/editorial-standards">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Editorial Standards', href: '/about/editorial-standards' }]} />
+    <div class="py-10 prose prose-slate max-w-none">
+      <h1 class="text-4xl font-bold text-[#1e293b]">Editorial standards</h1>
+      <h2>Source-linking</h2>
+      <p>Every status assertion and claim-check verdict is tied to one or more controlling sources. We link to official pages, PDFs, or archives whenever possible.</p>
+      <h2>Review</h2>
+      <p>Substance status pages are reviewed by a qualified regulatory reviewer. Rule explainers are reviewed for legal accuracy. Updates are dated and may include author, fact-checker, and legal reviewer credits.</p>
+      <h2>Corrections</h2>
+      <p>When we find an error, we correct it, note the change, and update the last-verified date. See our <a href="/about/corrections">corrections log</a>.</p>
+      <h2>Independence</h2>
+      <p>We do not accept payment or incentives to alter a status, ranking, or conclusion. Commercial relationships are disclosed.</p>
+    </div>
+  </div>
+</Layout>

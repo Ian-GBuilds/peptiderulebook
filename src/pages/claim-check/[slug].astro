@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SourceList from '../../components/SourceList';
+import { getClaimChecks, getClaimCheckBySlug, getDocuments, getAuthors, getSubstances, getRules } from '../../data/adapter';
+import { BreadcrumbList, Article } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+export async function getStaticPaths() {
+  const claims = await getClaimChecks();
+  return claims.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const claim = await getClaimCheckBySlug(slug);
+if (!claim) return Astro.redirect('/404');
+
+const [documents, authors, substances, rules] = await Promise.all([
+  getDocuments(),
+  getAuthors(),
+  getSubstances(),
+  getRules(),
+]);
+
+const relatedDocs = documents.filter((d) => claim.controlling_source_ids.includes(d.id));
+const author = authors.find((a) => a.id === claim.author_id);
+const legalReviewer = authors.find((a) => a.id === claim.legal_reviewer_id);
+const affectedSubstances = substances.filter((s) => claim.affected_substance_slugs?.includes(s.slug));
+const affectedRules = rules.filter((r) => claim.affected_rule_slugs?.includes(r.slug));
+
+const verdictClasses: Record<string, string> = {
+  accurate: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+  'partly accurate': 'bg-amber-100 text-amber-800 border-amber-200',
+  misleading: 'bg-orange-100 text-orange-800 border-orange-200',
+  unsupported: 'bg-slate-100 text-slate-700 border-slate-200',
+  outdated: 'bg-blue-100 text-blue-800 border-blue-200',
+  'not verifiable': 'bg-gray-100 text-gray-700 border-gray-200',
+};
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Claim Check', href: '/claim-check' },
+  { label: claim.title, href: `/claim-check/${claim.slug}/` },
+];
+
+const updateForLd = {
+  id: claim.id,
+  slug: claim.slug,
+  title: claim.title,
+  dek: claim.correct_wording,
+  direct_answer: claim.correct_wording,
+  key_takeaways: [],
+  body: claim.correct_wording,
+  content_type: 'update',
+  publication_date: claim.date,
+  procedural_status: claim.verdict,
+  what_changed: '',
+  what_did_not_change: '',
+  affected_substance_slugs: claim.affected_substance_slugs || [],
+  affected_rule_slugs: claim.affected_rule_slugs || [],
+  document_ids: claim.controlling_source_ids,
+  author_id: claim.author_id,
+  legal_reviewer_id: claim.legal_reviewer_id,
+  date_published: claim.date,
+  date_modified: claim.last_verified,
+  last_verified: claim.last_verified,
+  next_review_at: claim.last_verified,
+  status: 'published',
+};
+
+const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/claim-check/${claim.slug}`)];
+---
+<Layout title={claim.title} description={claim.correct_wording} canonical={`/claim-check/${claim.slug}`} jsonLd={jsonLd}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="py-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${verdictClasses[claim.verdict] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>{claim.verdict}</span>
+        <span class="text-sm text-slate-500">{claim.jurisdiction} · {claim.date}</span>
+      </div>
+      <h1 class="mt-4 text-4xl font-bold text-[#1e293b]">{claim.title}</h1>
+      <p class="mt-6 text-lg text-slate-700">“{claim.claim}”</p>
+      <div class="mt-6 rounded-lg border-l-4 border-emerald-500 bg-emerald-50 p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-emerald-800">Correct wording</h2>
+        <p class="mt-2 text-lg font-medium text-emerald-900">{claim.correct_wording}</p>
+      </div>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Why this is confusing</h2>
+        <p class="mt-2 text-slate-700">{claim.why_confusion}</p>
+      </section>
+
+      <SourceList client:visible sources={relatedDocs} title="Sources" />
+
+      {(affectedSubstances.length > 0 || affectedRules.length > 0) && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Related records</h2>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {affectedSubstances.map((s) => (
+              <a href={`/substances/${s.slug}/`} class="rounded bg-emerald-50 px-3 py-1 text-sm text-emerald-700 hover:underline">{s.canonical_name}</a>
+            ))}
+            {affectedRules.map((r) => (
+              <a href={`/rules/${r.slug}/`} class="rounded bg-blue-50 px-3 py-1 text-sm text-blue-700 hover:underline">{r.name}</a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {claim.update_history && claim.update_history.length > 0 && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Update history</h2>
+          <ul class="mt-4 space-y-2">
+            {claim.update_history.map((entry) => (
+              <li class="text-sm text-slate-700"><time class="font-medium">{entry.date}</time> — {entry.note}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
+        <div>Author: <span class="font-medium text-slate-900">{author?.name || claim.author_id}</span></div>
+        {legalReviewer && <div>Legal reviewer: <span class="font-medium text-slate-900">{legalReviewer.name}</span></div>}
+        <div>Last verified: <span class="font-medium text-slate-900">{claim.last_verified}</span></div>
+      </div>
+    </article>
+  </div>
+</Layout>

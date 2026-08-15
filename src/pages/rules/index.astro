@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RuleCard from '../../components/RuleCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getRules } from '../../data/adapter';
+import { ItemList } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+const rules = await getRules();
+const listLd = ItemList(rules.map((r) => ({
+  name: r.name,
+  url: `${site.url}/rules/${r.slug}/`,
+  description: r.direct_answer,
+})));
+---
+<Layout title="Rulebook" description="Plain-language explainers for FDA approval, compounding rules, drug shortages, health claims, and research-use labeling." canonical="/rules" jsonLd={listLd}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Rulebook', href: '/rules' }]} />
+    <div class="py-10">
+      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Rulebook</h1>
+      <p class="text-slate-600 max-w-3xl">Regulatory rules that determine how peptides can be approved, compounded, marketed, and enforced.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {rules.map((r) => <RuleCard rule={r} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

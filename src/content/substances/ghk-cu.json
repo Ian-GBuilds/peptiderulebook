@@ -1,0 +1,67 @@
+{
+  "id": "ghk-cu",
+  "slug": "ghk-cu",
+  "canonical_name": "GHK-Cu",
+  "synonyms": [
+    "Copper peptide GHK-Cu",
+    "glycyl-L-histidyl-L-lysine copper"
+  ],
+  "identity_notes": "A tripeptide-copper complex. It is not a component of an FDA-approved drug. FDA's categorization differs by route of administration.",
+  "status_assertions": [
+    {
+      "id": "ghk-cu-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-approved",
+      "status_label": "Not an approved drug",
+      "qualification": "No FDA-approved application is in effect for GHK-Cu.",
+      "controlling_source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "as_of_date": "2024-09-27",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "ghk-cu-503a",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A pharmacy compounding",
+      "status_value": "route-dependent",
+      "status_label": "Category 1 except injectable; Category 2 for injectable",
+      "qualification": "FDA placed GHK-Cu in 503A Category 1 for non-injectable routes and Category 2 for injectable routes due to immunogenicity concerns.",
+      "controlling_source_ids": [
+        "fda-503a-bulk-list-2024",
+        "fda-ghk-cu-safety-2026"
+      ],
+      "as_of_date": "2024-09-27",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-09-27",
+      "title": "FDA updates GHK-Cu categorization",
+      "description": "503A bulk list places GHK-Cu in Category 1 except for injectable routes, which are Category 2.",
+      "source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "procedural_status": "final"
+    }
+  ],
+  "document_ids": [
+    "fda-503a-bulk-list-2024",
+    "fda-ghk-cu-safety-2026"
+  ],
+  "rule_ids": [
+    "503a"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

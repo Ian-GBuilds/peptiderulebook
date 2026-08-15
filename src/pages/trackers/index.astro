@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getTrackers } from '../../data/adapter';
+import { ItemList } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+const trackers = await getTrackers();
+const listLd = ItemList(trackers.map((t) => ({
+  name: t.name,
+  url: `${site.url}/trackers/${t.slug}/`,
+  description: t.description,
+})));
+---
+<Layout title="Trackers" description="Downloadable trackers for peptide compounding, drug shortages, and enforcement actions." canonical="/trackers" jsonLd={listLd}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Trackers', href: '/trackers' }]} />
+    <div class="py-10">
+      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Trackers</h1>
+      <p class="text-slate-600 max-w-3xl">Structured tables with source-linked rows you can view, filter, and export.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {trackers.map((t) => (
+          <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-[#1e293b]">
+              <a href={`/trackers/${t.slug}/`} class="hover:text-orange-600 hover:underline">{t.name}</a>
+            </h3>
+            <p class="mt-2 text-sm text-slate-600 line-clamp-3">{t.description}</p>
+            <p class="mt-4 text-xs text-slate-500">{t.rows.length} rows · Updated {t.last_updated}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

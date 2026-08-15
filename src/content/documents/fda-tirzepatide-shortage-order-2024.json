@@ -1,0 +1,23 @@
+{
+  "id": "fda-tirzepatide-shortage-order-2024",
+  "slug": "fda-tirzepatide-shortage-order-2024",
+  "title": "Declaratory Order: Resolution of Shortages of Tirzepatide Injection Products",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Declaratory order",
+  "docket_or_citation": "Drug Shortages",
+  "publication_date": "2024-12-19",
+  "effective_date": "2024-12-19",
+  "current_status": "Effective",
+  "official_url": "https://www.fda.gov/media/184606/download",
+  "official_pdf_url": "https://www.fda.gov/media/184606/download",
+  "archive_url": "",
+  "plain_language_summary": "FDA determined that the national shortage of tirzepatide injection products (Mounjaro and Zepbound) was resolved and provided 60/90-day enforcement-discretion transition periods for compounders.",
+  "related_substance_slugs": [
+    "tirzepatide"
+  ],
+  "related_rule_slugs": [
+    "drug-shortages",
+    "503a",
+    "503b"
+  ]
+}

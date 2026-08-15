@@ -1,0 +1,38 @@
+{
+  "id": "fda-approval",
+  "slug": "fda-approval",
+  "name": "FDA approval explained",
+  "jurisdiction": "us-federal",
+  "authority_type": "Statute and regulation",
+  "scope": "All drug products marketed in U.S. interstate commerce",
+  "direct_answer": "A drug must have an FDA-approved application in effect before it can be legally introduced into interstate commerce, unless a specific exemption applies. Approval is granted to a specific product, indication, route, strength, and dosage form.",
+  "definitions": [
+    {
+      "term": "NDA",
+      "definition": "New Drug Application under section 505(b) of the FD&C Act."
+    },
+    {
+      "term": "ANDA",
+      "definition": "Abbreviated New Drug Application for generic copies of approved drugs."
+    },
+    {
+      "term": "Active ingredient",
+      "definition": "The molecule responsible for a drug's effect; not the same as an approved finished drug product."
+    }
+  ],
+  "decision_logic": "1. Is there an FDA-approved NDA/ANDA/BLA in effect for the exact product? 2. If yes, what indication, route, and strengths are approved? 3. If no, is there a lawful exemption (e.g., compounding, investigational, shortage)? 4. Do not infer approval from an advisory committee vote, a docket, a nomination, or a shortage.",
+  "examples": [
+    "Tirzepatide is an active ingredient; Mounjaro and Zepbound are FDA-approved products containing it.",
+    "BPC-157 is not an approved drug even though it is sold online as a 'peptide' or dietary supplement."
+  ],
+  "limitations": [
+    "This page does not cover devices, cosmetics, or foods.",
+    "It does not provide legal advice for a specific product shipment or prescription."
+  ],
+  "controlling_source_ids": [
+    "fda-mounjaro-approval-2022"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

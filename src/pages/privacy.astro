@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<Layout title="Privacy Policy" description="Privacy policy for Peptide Rulebook." canonical="/privacy">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy', href: '/privacy' }]} />
+    <div class="py-10">
+      <h1 class="text-4xl font-bold text-[#1e293b]">Privacy policy</h1>
+      <p class="mt-4 text-slate-700">Peptide Rulebook does not sell personal data. This site is static and does not use cookies for tracking or advertising.</p>
+      <h2 class="mt-8 text-xl font-bold text-[#1e293b]">Newsletter</h2>
+      <p class="mt-2 text-slate-700">If you sign up for Rule Change Alerts, your email address is stored by our email provider and used only to send updates. You can unsubscribe at any time.</p>
+      <h2 class="mt-8 text-xl font-bold text-[#1e293b]">Analytics</h2>
+      <p class="mt-2 text-slate-700">We may use privacy-focused analytics to understand aggregate traffic. No personally identifiable information is collected.</p>
+      <h2 class="mt-8 text-xl font-bold text-[#1e293b]">Changes</h2>
+      <p class="mt-2 text-slate-700">We will update this policy if our data practices change.</p>
+    </div>
+  </div>
+</Layout>

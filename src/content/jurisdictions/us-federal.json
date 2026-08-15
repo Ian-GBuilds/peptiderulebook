@@ -1,0 +1,44 @@
+{
+  "id": "us-federal",
+  "slug": "us-federal",
+  "name": "United States federal",
+  "type": "federal",
+  "summary": "U.S. federal peptide regulation is split among FDA approval, compounding exemptions under FD&C Act sections 503A and 503B, drug-shortage authorities, enforcement discretion, and (for sport) WADA rules.",
+  "scope_notes": "Federal law preempts certain state requirements for approved drugs but leaves much compounding oversight to state boards of pharmacy. This page covers FDA, DEA, FTC, and WADA sport-rule status only.",
+  "key_agencies": [
+    {
+      "name": "FDA Center for Drug Evaluation and Research",
+      "url": "https://www.fda.gov/drugs"
+    },
+    {
+      "name": "FDA Office of Compounding Quality and Compliance",
+      "url": "https://www.fda.gov/drugs/human-drug-compounding"
+    },
+    {
+      "name": "Federal Trade Commission",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "name": "WADA",
+      "url": "https://www.wada-ama.org/"
+    }
+  ],
+  "document_ids": [
+    "fda-503a-bulk-list-2024",
+    "fda-503b-bulk-list-2025",
+    "wada-prohibited-list-2025"
+  ],
+  "substance_slugs": [
+    "bpc-157",
+    "tirzepatide",
+    "semaglutide",
+    "retatrutide",
+    "tesamorelin",
+    "ipamorelin",
+    "sermorelin",
+    "pt-141",
+    "melanotan-ii",
+    "ghk-cu"
+  ],
+  "review_status": "complete"
+}

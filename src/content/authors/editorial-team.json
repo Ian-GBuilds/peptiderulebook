@@ -1,0 +1,10 @@
+{
+  "id": "editorial-team",
+  "slug": "editorial-team",
+  "name": "Peptide Rulebook Editorial Team",
+  "role": "Editorial lead",
+  "bio": "The Editorial Team coordinates source verification, status methodology, and day-to-day record maintenance. Individual bylines are added when contributors confirm public attribution.",
+  "credentials": "Editorial policies reviewed by qualified regulatory and legal reviewers.",
+  "conflicts": "None; the site does not accept paid status changes or sponsored substance pages.",
+  "is_public": true
+}

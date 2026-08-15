@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SourceList from '../../components/SourceList';
+import { getRules, getRuleBySlug, getDocuments, getAuthors } from '../../data/adapter';
+import { BreadcrumbList, Article } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+export async function getStaticPaths() {
+  const rules = await getRules();
+  return rules.map((r) => ({ params: { slug: r.slug } }));
+}
+
+const { slug } = Astro.params;
+const rule = await getRuleBySlug(slug);
+if (!rule) return Astro.redirect('/404');
+
+const [documents, authors] = await Promise.all([getDocuments(), getAuthors()]);
+const relatedDocs = documents.filter((d) => rule.controlling_source_ids.includes(d.id));
+const reviewer = authors.find((a) => a.id === rule.legal_reviewer_id);
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Rulebook', href: '/rules' },
+  { label: rule.name, href: `/rules/${rule.slug}/` },
+];
+
+const updateForLd = {
+  id: rule.id,
+  slug: rule.slug,
+  title: rule.name,
+  dek: rule.direct_answer,
+  direct_answer: rule.direct_answer,
+  key_takeaways: [],
+  body: rule.direct_answer,
+  content_type: 'update',
+  publication_date: rule.last_verified,
+  procedural_status: 'Current',
+  what_changed: '',
+  what_did_not_change: '',
+  affected_substance_slugs: [],
+  affected_rule_slugs: [],
+  document_ids: rule.controlling_source_ids,
+  author_id: rule.legal_reviewer_id,
+  legal_reviewer_id: rule.legal_reviewer_id,
+  date_published: rule.last_verified,
+  date_modified: rule.last_verified,
+  last_verified: rule.last_verified,
+  next_review_at: rule.next_review_at,
+  status: 'published',
+};
+
+const jsonLd = [BreadcrumbList(breadcrumbs), Article(updateForLd, site, `/rules/${rule.slug}`)];
+---
+<Layout title={rule.name} description={rule.direct_answer} canonical={`/rules/${rule.slug}`} jsonLd={jsonLd}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="py-8">
+      <h1 class="text-4xl font-bold text-[#1e293b]">{rule.name}</h1>
+      <div class="mt-4 flex flex-wrap gap-2 text-sm">
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.jurisdiction}</span>
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{rule.authority_type}</span>
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">Scope: {rule.scope}</span>
+      </div>
+      <p class="mt-6 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{rule.direct_answer}</p>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Who this applies to</h2>
+        <p class="mt-2 text-slate-700">{rule.scope}</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Definitions</h2>
+        <dl class="mt-4 space-y-4">
+          {rule.definitions.map((def) => (
+            <div class="rounded-lg border border-slate-200 bg-white p-4">
+              <dt class="font-semibold text-[#1e293b]">{def.term}</dt>
+              <dd class="mt-1 text-slate-700">{def.definition}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Decision flow</h2>
+        <ol class="mt-4 list-decimal list-inside space-y-2 text-slate-700">
+          {rule.decision_logic.split(/\d+\./).filter(Boolean).map((step) => (
+            <li>{step.trim()}</li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Examples</h2>
+        <ul class="mt-4 space-y-2">
+          {rule.examples.map((ex) => (
+            <li class="flex gap-2"><span class="text-emerald-500">•</span> <span class="text-slate-700">{ex}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Common mistakes / limitations</h2>
+        <ul class="mt-4 space-y-2">
+          {rule.limitations.map((lim) => (
+            <li class="flex gap-2"><span class="text-orange-500">✗</span> <span class="text-slate-700">{lim}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">What can change this answer</h2>
+        <p class="mt-2 text-slate-700">Rules can change through new legislation, FDA final guidance, declaratory orders, court decisions, or updated bulk-drug-substance lists. Check the latest controlling sources and the update feed for this rule.</p>
+      </section>
+
+      <SourceList client:visible sources={relatedDocs} title="Controlling law and sources" />
+
+      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
+        <div>Last verified: <span class="font-medium text-slate-900">{rule.last_verified}</span></div>
+        <div>Legal reviewer: <span class="font-medium text-slate-900">{reviewer?.name || rule.legal_reviewer_id}</span></div>
+        <div>Next review: <span class="font-medium text-slate-900">{rule.next_review_at}</span></div>
+      </div>
+    </article>
+  </div>
+</Layout>

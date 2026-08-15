@@ -1,0 +1,23 @@
+{
+  "id": "fda-503a-bulk-list-2024",
+  "slug": "fda-503a-bulk-list-2024",
+  "title": "Bulk Drug Substances Nominated for Use in Compounding Under Section 503A",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Agency list",
+  "docket_or_citation": "FDA-2015-N-3534",
+  "publication_date": "2024-09-27",
+  "updated_date": "2024-09-27",
+  "current_status": "Active",
+  "official_url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding",
+  "official_pdf_url": "https://www.fda.gov/media/94155/download",
+  "archive_url": "",
+  "plain_language_summary": "FDA's running list of bulk drug substances nominated for use in 503A pharmacy compounding, organized into Category 1 (under evaluation), Category 2 (significant safety risks), and Category 3 (nominated without adequate support).",
+  "provisions": [
+    "503A bulk list categories",
+    "Category 2 safety-risk substances"
+  ],
+  "related_rule_slugs": [
+    "503a",
+    "503b"
+  ]
+}

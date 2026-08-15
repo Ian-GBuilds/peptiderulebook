@@ -1,0 +1,103 @@
+{
+  "id": "tirzepatide",
+  "slug": "tirzepatide",
+  "canonical_name": "Tirzepatide",
+  "synonyms": [
+    "LY3298176",
+    "Mounjaro",
+    "Zepbound"
+  ],
+  "identity_notes": "A dual GIP/GLP-1 receptor agonist peptide. FDA has approved it as the active ingredient in Mounjaro and Zepbound for specific indications, routes, strengths, and products.",
+  "status_assertions": [
+    {
+      "id": "tirzepatide-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "approved",
+      "status_label": "Approved product — specific indication/route",
+      "qualification": "Mounjaro (tirzepatide) injection approved 2022-05-13 for T2D; Zepbound (tirzepatide) injection approved 2023-11-08 for chronic weight management.",
+      "controlling_source_ids": [
+        "fda-mounjaro-approval-2022"
+      ],
+      "as_of_date": "2023-11-08",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "tirzepatide-shortage",
+      "jurisdiction_id": "us-federal",
+      "activity": "National drug shortage",
+      "status_value": "resolved",
+      "status_label": "Shortage resolved",
+      "qualification": "FDA determined the tirzepatide injection shortage was resolved on 2024-12-19. Localized supply disruptions may still occur.",
+      "controlling_source_ids": [
+        "fda-tirzepatide-shortage-order-2024"
+      ],
+      "as_of_date": "2024-12-19",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "tirzepatide-503a-copy",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A compounding of copies",
+      "status_value": "restricted",
+      "status_label": "Copy restrictions apply after shortage resolution",
+      "qualification": "Compounded drugs that are essentially copies of Mounjaro/Zepbound are generally restricted under 503A now that the shortage is resolved. FDA's 60/90-day enforcement-discretion period has ended.",
+      "controlling_source_ids": [
+        "fda-tirzepatide-shortage-order-2024"
+      ],
+      "as_of_date": "2024-12-19",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2022-05-13",
+      "title": "FDA approves Mounjaro",
+      "description": "Approved for glycemic control in adults with type 2 diabetes.",
+      "source_ids": [
+        "fda-mounjaro-approval-2022"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2023-11-08",
+      "title": "FDA approves Zepbound",
+      "description": "Approved for chronic weight management.",
+      "source_ids": [
+        "fda-mounjaro-approval-2022"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2024-12-19",
+      "title": "FDA resolves tirzepatide shortage",
+      "description": "Declaratory order ends shortage status and limits compounding-copy exceptions.",
+      "source_ids": [
+        "fda-tirzepatide-shortage-order-2024"
+      ],
+      "procedural_status": "final/effective"
+    }
+  ],
+  "document_ids": [
+    "fda-mounjaro-approval-2022",
+    "fda-tirzepatide-shortage-order-2024"
+  ],
+  "rule_ids": [
+    "fda-approval",
+    "503a",
+    "503b",
+    "drug-shortages"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "reviewer_id": "regulatory-reviewer"
+}

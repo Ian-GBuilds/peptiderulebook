@@ -1,0 +1,67 @@
+{
+  "id": "tesamorelin",
+  "slug": "tesamorelin",
+  "canonical_name": "Tesamorelin",
+  "synonyms": [
+    "Egrifta",
+    "TH9507"
+  ],
+  "identity_notes": "A growth hormone-releasing factor analog. FDA has approved it in Egrifta for a specific HIV-associated indication.",
+  "status_assertions": [
+    {
+      "id": "tesamorelin-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "approved",
+      "status_label": "Approved product — specific indication/route",
+      "qualification": "Egrifta (tesamorelin for injection) approved 2010-11-10 to reduce excess abdominal fat in HIV-infected patients with lipodystrophy.",
+      "controlling_source_ids": [
+        "fda-egrifta-approval-2010"
+      ],
+      "as_of_date": "2010-11-10",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "tesamorelin-503b",
+      "jurisdiction_id": "us-federal",
+      "activity": "503B outsourcing-facility compounding",
+      "status_value": "component-approved",
+      "status_label": "Component of FDA-approved drug (Category 1**)",
+      "qualification": "Sermorelin acetate is listed in 503B Category 1 as a component of an FDA-approved drug. Tesamorelin itself is an approved active ingredient; 503B compounds must also satisfy 'not essentially a copy' and other conditions.",
+      "controlling_source_ids": [
+        "fda-egrifta-approval-2010",
+        "fda-503b-bulk-list-2025"
+      ],
+      "as_of_date": "2025-03-21",
+      "confidence": "medium",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2010-11-10",
+      "title": "FDA approves Egrifta",
+      "description": "Approved for reduction of excess abdominal fat in HIV-infected patients with lipodystrophy.",
+      "source_ids": [
+        "fda-egrifta-approval-2010"
+      ],
+      "procedural_status": "final"
+    }
+  ],
+  "document_ids": [
+    "fda-egrifta-approval-2010"
+  ],
+  "rule_ids": [
+    "fda-approval",
+    "503b"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

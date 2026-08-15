@@ -1,0 +1,18 @@
+{
+  "id": "fda-wegovy-approval-2021",
+  "slug": "fda-wegovy-approval-2021",
+  "title": "Wegovy (semaglutide) Approval Letter",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Approval letter",
+  "docket_or_citation": "NDA 215256",
+  "publication_date": "2021-06-04",
+  "effective_date": "2021-06-04",
+  "current_status": "Approved",
+  "official_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000Approv.pdf",
+  "official_pdf_url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000Approv.pdf",
+  "archive_url": "",
+  "plain_language_summary": "FDA approved Wegovy (semaglutide) injection for chronic weight management in adults with obesity or overweight with at least one weight-related comorbidity.",
+  "related_substance_slugs": [
+    "semaglutide"
+  ]
+}

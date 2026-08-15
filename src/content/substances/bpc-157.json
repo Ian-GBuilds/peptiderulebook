@@ -1,0 +1,139 @@
+{
+  "id": "bpc-157",
+  "slug": "bpc-157",
+  "canonical_name": "BPC-157",
+  "synonyms": [
+    "Body Protection Compound-157",
+    "Bepecin",
+    "PL-14736"
+  ],
+  "identity_notes": "A synthetic 15-amino-acid peptide. It has no USAN, no USP/NF monograph, and is not a component of an FDA-approved drug. Commercial products may be sold as BPC-157 acetate or BPC-157 free base, which are distinct active pharmaceutical ingredients.",
+  "status_assertions": [
+    {
+      "id": "bpc-157-fda-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-approved",
+      "status_label": "Not an approved drug",
+      "qualification": "No FDA-approved new drug application is in effect for BPC-157.",
+      "controlling_source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "as_of_date": "2024-09-27",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "bpc-157-503a",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A pharmacy compounding",
+      "status_value": "safety-risk",
+      "status_label": "Category 2 — significant safety risk",
+      "qualification": "FDA placed BPC-157 in Category 2 of the 503A bulk list. It is not on the list of bulk substances that can be used in 503A compounding.",
+      "controlling_source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "as_of_date": "2024-09-27",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "bpc-157-503b",
+      "jurisdiction_id": "us-federal",
+      "activity": "503B outsourcing-facility compounding",
+      "status_value": "not-listed",
+      "status_label": "Not on 503B bulk list / not an approved component",
+      "qualification": "BPC-157 is not a component of an FDA-approved drug and is not on the 503B bulk list. It does not qualify for the 503B bulk-drug-substance exemption.",
+      "controlling_source_ids": [
+        "fda-503b-bulk-list-2025"
+      ],
+      "as_of_date": "2025-03-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "bpc-157-wada",
+      "jurisdiction_id": "us-federal",
+      "activity": "Sport (WADA)",
+      "status_value": "prohibited",
+      "status_label": "Prohibited at all times — S0",
+      "qualification": "WADA lists BPC-157 as an example of a non-approved substance in class S0. This is a sport-rule prohibition, not a general FDA determination.",
+      "controlling_source_ids": [
+        "wada-prohibited-list-2025"
+      ],
+      "as_of_date": "2025-01-01",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2022-01-01",
+      "title": "WADA adds BPC-157 to Prohibited List",
+      "description": "BPC-157 appears as an example in S0 (non-approved substances).",
+      "source_ids": [
+        "wada-prohibited-list-2025"
+      ],
+      "procedural_status": "effective"
+    },
+    {
+      "date": "2023-06-12",
+      "title": "FDA warning letter cites BPC-157",
+      "description": "FDA warned Warrior Labz SARMS that its BPC-157 products were unapproved new drugs.",
+      "source_ids": [
+        "fda-warrior-labz-warning-2023"
+      ],
+      "procedural_status": "enforcement action recorded"
+    },
+    {
+      "date": "2024-09-27",
+      "title": "FDA places BPC-157 in 503A Category 2",
+      "description": "FDA updated the 503A bulk list, placing BPC-157 in Category 2 (significant safety risks).",
+      "source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2026-07-23",
+      "title": "PCAC scheduled to discuss BPC-157",
+      "description": "FDA's Pharmacy Compounding Advisory Committee is scheduled to discuss BPC-157-related bulk substances. Any recommendation is advisory and does not change status immediately.",
+      "source_ids": [
+        "fda-bpc157-briefing-2026"
+      ],
+      "procedural_status": "advisory"
+    }
+  ],
+  "document_ids": [
+    "fda-503a-bulk-list-2024",
+    "fda-503b-bulk-list-2025",
+    "wada-prohibited-list-2025",
+    "fda-warrior-labz-warning-2023",
+    "fda-bpc157-briefing-2026"
+  ],
+  "rule_ids": [
+    "503a",
+    "research-use-only",
+    "health-claims"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "faq_items": [
+    {
+      "question": "Is BPC-157 FDA approved?",
+      "answer": "No. No FDA-approved application is in effect for BPC-157 for any use or route."
+    },
+    {
+      "question": "Can a pharmacy compound BPC-157?",
+      "answer": "Under current FDA guidance, BPC-157 is in Category 2 (significant safety risks) for 503A compounding and is not on the 503B bulk list."
+    }
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "reviewer_id": "regulatory-reviewer"
+}

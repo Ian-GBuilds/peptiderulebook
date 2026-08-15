@@ -1,0 +1,86 @@
+{
+  "id": "fda-peptide-compounding",
+  "slug": "fda-compounding",
+  "name": "FDA peptide compounding tracker",
+  "description": "Selected peptides on FDA's 503A and 503B bulk drug substance lists, with category and route restrictions.",
+  "columns": [
+    {
+      "key": "substance",
+      "label": "Substance"
+    },
+    {
+      "key": "pathway",
+      "label": "Pathway"
+    },
+    {
+      "key": "category",
+      "label": "Category / Status"
+    },
+    {
+      "key": "as_of",
+      "label": "As of"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    }
+  ],
+  "rows": [
+    {
+      "substance": "BPC-157",
+      "pathway": "503A",
+      "category": "Category 2 — significant safety risk",
+      "as_of": "2024-09-27",
+      "source": "FDA 503A list"
+    },
+    {
+      "substance": "BPC-157",
+      "pathway": "503B",
+      "category": "Not listed / not approved component",
+      "as_of": "2025-03-21",
+      "source": "FDA 503B list"
+    },
+    {
+      "substance": "Ipamorelin acetate",
+      "pathway": "503B",
+      "category": "Category 2 — significant safety risk",
+      "as_of": "2025-03-21",
+      "source": "FDA 503B list"
+    },
+    {
+      "substance": "Ipamorelin",
+      "pathway": "503A",
+      "category": "Not on bulk list (PCAC recommended against)",
+      "as_of": "2024-10-29",
+      "source": "PCAC briefing"
+    },
+    {
+      "substance": "GHK-Cu",
+      "pathway": "503A",
+      "category": "Cat 1 except injectable; Cat 2 injectable",
+      "as_of": "2024-09-27",
+      "source": "FDA 503A list"
+    },
+    {
+      "substance": "Melanotan II",
+      "pathway": "503A",
+      "category": "Category 2 — significant safety risk",
+      "as_of": "2024-09-27",
+      "source": "FDA 503A list"
+    },
+    {
+      "substance": "Sermorelin acetate",
+      "pathway": "503B",
+      "category": "Category 1** (component of approved drug)",
+      "as_of": "2025-03-21",
+      "source": "FDA 503B list"
+    }
+  ],
+  "source_ids": [
+    "fda-503a-bulk-list-2024",
+    "fda-503b-bulk-list-2025",
+    "fda-ipamorelin-briefing-2024"
+  ],
+  "last_updated": "2025-03-01",
+  "next_update_at": "2025-06-01"
+}

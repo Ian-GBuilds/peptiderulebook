@@ -1,0 +1,10 @@
+{
+  "id": "regulatory-reviewer",
+  "slug": "regulatory-reviewer",
+  "name": "External Regulatory Reviewer",
+  "role": "Legal/regulatory reviewer",
+  "bio": "Material status interpretations are reviewed by an independent U.S. health-law and regulatory professional before publication. A named profile will be published once the reviewer confirms public attribution.",
+  "credentials": "Health-law/regulatory review conducted under contract; credentials verified internally.",
+  "conflicts": "Reviewer is not affiliated with any peptide vendor, clinic, or compounder.",
+  "is_public": false
+}

@@ -1,0 +1,39 @@
+{
+  "id": "bpc157-category2-2024",
+  "slug": "bpc157-category2-2024",
+  "title": "FDA places BPC-157 in Category 2 significant safety risks",
+  "dek": "The September 2024 update to the 503A bulk list keeps BPC-157 off the lawful compounding list because of safety concerns.",
+  "direct_answer": "As of September 27, 2024, FDA categorizes BPC-157 as a 503A bulk drug substance that raises significant safety concerns (Category 2). It is not on the list of substances that can be used in 503A compounding.",
+  "key_takeaways": [
+    "BPC-157 is not an FDA-approved drug.",
+    "Category 2 status means FDA identified significant safety risks.",
+    "A later advisory committee meeting can make recommendations, but it cannot itself approve BPC-157."
+  ],
+  "body": "<p>FDA's September 27, 2024 update to the 503A bulk drug substances list places BPC-157 in Category 2: Bulk Drug Substances that Raise Significant Safety Concerns. The agency also published a safety-risk summary noting concerns about peptide-related impurities, aggregation, and immunogenicity for peptides such as BPC-157.</p><p>This status is different from an FDA approval or a final rule adding BPC-157 to the permitted bulk list. Category 2 substances are not on the 503A bulk list and therefore do not have a recognized federal pathway for 503A compounding.</p><h2>What did not change</h2><p>BPC-157 was not approved. WADA's S0 prohibition remains in effect. State and federal enforcement against unapproved products can still occur.</p>",
+  "event_date": "2024-09-27",
+  "publication_date": "2024-10-02",
+  "effective_date": "2024-09-27",
+  "procedural_status": "Final",
+  "what_changed": "FDA formally placed BPC-157 in 503A Category 2.",
+  "what_did_not_change": "BPC-157 remains unapproved; no lawful 503A compounding pathway opened.",
+  "next_step": "FDA's Pharmacy Compounding Advisory Committee is scheduled to discuss BPC-157-related bulk substances; any recommendation is advisory.",
+  "affected_substance_slugs": [
+    "bpc-157"
+  ],
+  "affected_rule_slugs": [
+    "503a"
+  ],
+  "document_ids": [
+    "fda-503a-bulk-list-2024",
+    "fda-bpc157-briefing-2026"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "date_published": "2024-10-02",
+  "date_modified": "2025-03-01",
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "hero_image": "/images/heroes/bpc157-category2-2024.svg",
+  "hero_alt": "Regulatory document graphic for the BPC-157 Category 2 update",
+  "status": "published"
+}

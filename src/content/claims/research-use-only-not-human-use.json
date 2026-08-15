@@ -1,0 +1,24 @@
+{
+  "id": "research-use-only-not-human-use",
+  "slug": "research-use-only-not-human-use",
+  "title": "Does 'research use only' mean a peptide is not a drug for human use?",
+  "claim": "A product labeled 'research use only' or 'not for human use' is not an FDA-regulated drug.",
+  "verdict": "misleading",
+  "correct_wording": "FDA looks at intended use, including website claims and marketing context. If the evidence shows the product is intended for human disease treatment, the 'research use only' label does not make it lawful.",
+  "controlling_source_ids": [
+    "fda-xcel-warning-letter-2024"
+  ],
+  "date": "2024-12-10",
+  "jurisdiction": "U.S. federal",
+  "why_confusion": "Vendors use research-only disclaimers to suggest their products are outside FDA jurisdiction, but FDA evaluates objective intent.",
+  "affected_substance_slugs": [
+    "retatrutide",
+    "sermorelin"
+  ],
+  "affected_rule_slugs": [
+    "research-use-only"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "last_verified": "2025-03-01"
+}

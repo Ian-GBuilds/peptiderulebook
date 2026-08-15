@@ -1,0 +1,105 @@
+{
+  "id": "semaglutide",
+  "slug": "semaglutide",
+  "canonical_name": "Semaglutide",
+  "synonyms": [
+    "Ozempic",
+    "Rybelsus",
+    "Wegovy"
+  ],
+  "identity_notes": "A GLP-1 receptor agonist approved in three FDA-approved products with different routes, indications, and strengths.",
+  "status_assertions": [
+    {
+      "id": "semaglutide-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "approved",
+      "status_label": "Approved product — specific indication/route",
+      "qualification": "Ozempic injection approved 2017-12-05 (T2D); Rybelsus tablets approved 2019-09-20 (T2D); Wegovy injection approved 2021-06-04 (weight management).",
+      "controlling_source_ids": [
+        "fda-ozempic-approval-2017",
+        "fda-wegovy-approval-2021"
+      ],
+      "as_of_date": "2021-06-04",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "semaglutide-shortage",
+      "jurisdiction_id": "us-federal",
+      "activity": "National drug shortage",
+      "status_value": "resolved",
+      "status_label": "Shortage resolved",
+      "qualification": "FDA determined the semaglutide injection shortage was resolved on 2025-02-21. Oral Rybelsus was not in shortage.",
+      "controlling_source_ids": [
+        "fda-semaglutide-shortage-order-2025"
+      ],
+      "as_of_date": "2025-02-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "semaglutide-503a-copy",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A compounding of copies",
+      "status_value": "restricted",
+      "status_label": "Copy restrictions apply after shortage resolution",
+      "qualification": "Compounded copies of Ozempic/Wegovy are generally restricted under 503A now that the shortage is resolved. FDA's transition enforcement discretion ended in April/May 2025.",
+      "controlling_source_ids": [
+        "fda-semaglutide-shortage-order-2025"
+      ],
+      "as_of_date": "2025-02-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2017-12-05",
+      "title": "FDA approves Ozempic",
+      "description": "Semaglutide injection approved for T2D.",
+      "source_ids": [
+        "fda-ozempic-approval-2017"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2021-06-04",
+      "title": "FDA approves Wegovy",
+      "description": "Semaglutide injection approved for chronic weight management.",
+      "source_ids": [
+        "fda-wegovy-approval-2021"
+      ],
+      "procedural_status": "final"
+    },
+    {
+      "date": "2025-02-21",
+      "title": "FDA resolves semaglutide injection shortage",
+      "description": "Declaratory order finds shortage resolved and ends shortage-based compounding exceptions.",
+      "source_ids": [
+        "fda-semaglutide-shortage-order-2025"
+      ],
+      "procedural_status": "final/effective"
+    }
+  ],
+  "document_ids": [
+    "fda-ozempic-approval-2017",
+    "fda-wegovy-approval-2021",
+    "fda-semaglutide-shortage-order-2025"
+  ],
+  "rule_ids": [
+    "fda-approval",
+    "503a",
+    "503b",
+    "drug-shortages"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "reviewer_id": "regulatory-reviewer"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "advisory-committee-vote-not-approval",
+  "slug": "advisory-committee-vote-not-approval",
+  "title": "Does an FDA advisory committee vote approve a peptide?",
+  "claim": "The FDA advisory committee voted to approve the peptide.",
+  "verdict": "misleading",
+  "correct_wording": "An FDA advisory committee vote is a recommendation only. FDA makes the final approval decision, and a recommendation does not change the legal status of a substance.",
+  "controlling_source_ids": [
+    "fda-bpc157-briefing-2026"
+  ],
+  "date": "2026-07-23",
+  "jurisdiction": "U.S. federal",
+  "why_confusion": "News headlines often shorten 'the committee recommended' to 'FDA approved,' especially for high-interest peptide drugs.",
+  "affected_substance_slugs": [
+    "bpc-157",
+    "ipamorelin"
+  ],
+  "affected_rule_slugs": [
+    "fda-approval"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "last_verified": "2025-03-01"
+}

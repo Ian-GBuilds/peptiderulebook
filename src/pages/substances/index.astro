@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SubstanceCard from '../../components/SubstanceCard.astro';
+import SearchModal from '../../components/SearchModal';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getSubstances } from '../../data/adapter';
+import { ItemList } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+const substances = await getSubstances();
+
+const searchIndex = substances.map((s) => ({
+  type: 'substance' as const,
+  title: s.canonical_name,
+  href: `/substances/${s.slug}/`,
+  description: s.identity_notes,
+}));
+
+const listLd = ItemList(substances.map((s) => ({
+  name: s.canonical_name,
+  url: `${site.url}/substances/${s.slug}/`,
+  description: s.identity_notes,
+})));
+---
+<Layout title="Substance Status" description="Source-linked peptide status tracker: FDA approval, compounding, shortages, sport rules, and enforcement." canonical="/substances" jsonLd={listLd}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Substances', href: '/substances' }]} />
+    <div class="py-10">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <h1 class="text-3xl font-bold text-[#1e293b]">Substance status</h1>
+        <SearchModal client:load index={searchIndex} />
+      </div>
+      <p class="text-slate-600 max-w-3xl">Each record shows the current regulatory status for a peptide, including controlling sources, as-of dates, and what the status does and does not mean.</p>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {substances.map((s) => <SubstanceCard substance={s} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

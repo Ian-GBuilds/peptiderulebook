@@ -1,0 +1,76 @@
+{
+  "id": "melanotan-ii",
+  "slug": "melanotan-ii",
+  "canonical_name": "Melanotan II",
+  "synonyms": [
+    "MT-II",
+    "Melanotan 2"
+  ],
+  "identity_notes": "A synthetic melanocortin peptide. It is not a component of an FDA-approved drug and has no USP/NF monograph.",
+  "status_assertions": [
+    {
+      "id": "melanotan-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-approved",
+      "status_label": "Not an approved drug",
+      "qualification": "No FDA-approved application is in effect for Melanotan II.",
+      "controlling_source_ids": [
+        "fda-melanotan-warning-2007"
+      ],
+      "as_of_date": "2007-08-30",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "melanotan-503a",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A pharmacy compounding",
+      "status_value": "safety-risk",
+      "status_label": "Category 2 — significant safety risk",
+      "qualification": "FDA placed Melanotan II in Category 2 of the 503A bulk list.",
+      "controlling_source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "as_of_date": "2024-09-27",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2007-08-30",
+      "title": "FDA warning letter for Melanotan II",
+      "description": "FDA warned Melanocorp that Melanotan II was an unapproved new drug.",
+      "source_ids": [
+        "fda-melanotan-warning-2007"
+      ],
+      "procedural_status": "enforcement action recorded"
+    },
+    {
+      "date": "2024-09-27",
+      "title": "FDA places Melanotan II in 503A Category 2",
+      "description": "Updated 503A bulk list categorizes Melanotan II as raising significant safety risks.",
+      "source_ids": [
+        "fda-503a-bulk-list-2024"
+      ],
+      "procedural_status": "final"
+    }
+  ],
+  "document_ids": [
+    "fda-melanotan-warning-2007",
+    "fda-503a-bulk-list-2024"
+  ],
+  "rule_ids": [
+    "503a",
+    "health-claims"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

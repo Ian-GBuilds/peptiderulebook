@@ -1,0 +1,18 @@
+{
+  "id": "fda-egrifta-approval-2010",
+  "slug": "fda-egrifta-approval-2010",
+  "title": "Egrifta (tesamorelin) Approval",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Approval record",
+  "docket_or_citation": "NDA 022505",
+  "publication_date": "2010-11-10",
+  "effective_date": "2010-11-10",
+  "current_status": "Approved",
+  "official_url": "https://purplebooksearch.fda.gov/",
+  "official_pdf_url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf",
+  "archive_url": "",
+  "plain_language_summary": "FDA approved Egrifta (tesamorelin for injection) to reduce excess abdominal fat in HIV-infected patients with lipodystrophy.",
+  "related_substance_slugs": [
+    "tesamorelin"
+  ]
+}

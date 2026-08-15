@@ -1,0 +1,22 @@
+{
+  "id": "fda-503b-bulk-list-2025",
+  "slug": "fda-503b-bulk-list-2025",
+  "title": "Bulk Drug Substances Nominated for Use in Compounding Under Section 503B",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Agency list",
+  "docket_or_citation": "FDA-2015-N-0030",
+  "publication_date": "2025-03-21",
+  "updated_date": "2025-03-21",
+  "current_status": "Active",
+  "official_url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding",
+  "official_pdf_url": "https://www.fda.gov/media/94164/download",
+  "archive_url": "",
+  "plain_language_summary": "FDA's running list of bulk drug substances nominated for use by 503B outsourcing facilities. Category 1 substances are under evaluation; Category 2 substances raise significant safety risks; Category 3 substances were nominated without adequate support.",
+  "provisions": [
+    "503B bulk list categories",
+    "Category 2 safety-risk substances"
+  ],
+  "related_rule_slugs": [
+    "503b"
+  ]
+}

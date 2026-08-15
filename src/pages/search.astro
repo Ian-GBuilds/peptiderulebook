@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchModal from '../components/SearchModal';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getSubstances, getRules, getPublishedUpdates, getClaimChecks, getDocuments, getJurisdictions } from '../data/adapter';
+
+const [substances, rules, updates, claims, documents, jurisdictions] = await Promise.all([
+  getSubstances(),
+  getRules(),
+  getPublishedUpdates(),
+  getClaimChecks(),
+  getDocuments(),
+  getJurisdictions(),
+]);
+
+const searchIndex = [
+  ...substances.map((s) => ({ type: 'substance' as const, title: s.canonical_name, href: `/substances/${s.slug}/`, description: s.identity_notes })),
+  ...rules.map((r) => ({ type: 'rule' as const, title: r.name, href: `/rules/${r.slug}/`, description: r.direct_answer })),
+  ...updates.map((u) => ({ type: 'update' as const, title: u.title, href: `/updates/${u.slug}/`, description: u.dek })),
+  ...claims.map((c) => ({ type: 'claim' as const, title: c.title, href: `/claim-check/${c.slug}/`, description: c.claim })),
+  ...documents.map((d) => ({ type: 'document' as const, title: d.title, href: `/documents/${d.slug}/`, description: d.plain_language_summary })),
+  ...jurisdictions.map((j) => ({ type: 'jurisdiction' as const, title: j.name, href: `/jurisdictions/${j.slug}/`, description: j.summary })),
+];
+---
+<Layout title="Search" description="Search the Peptide Rulebook for substances, rules, updates, claims, documents, and jurisdictions." canonical="/search" noindex>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Search', href: '/search' }]} />
+    <div class="py-12">
+      <h1 class="text-3xl font-bold text-[#1e293b]">Search</h1>
+      <p class="mt-2 text-slate-600">Find substances, rules, updates, claim checks, documents, and jurisdictions.</p>
+      <div class="mt-6">
+        <SearchModal client:load index={searchIndex} />
+      </div>
+      <div class="mt-8 space-y-2">
+        {searchIndex.slice(0, 12).map((item) => (
+          <a href={item.href} class="block rounded-lg border border-slate-200 bg-white p-4 hover:shadow-sm">
+            <span class="text-xs font-medium uppercase tracking-wide text-orange-600">{item.type}</span>
+            <div class="font-medium text-[#1e293b]">{item.title}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

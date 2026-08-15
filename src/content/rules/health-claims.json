@@ -1,0 +1,34 @@
+{
+  "id": "health-claims",
+  "slug": "health-claims",
+  "name": "Health advertising claims",
+  "jurisdiction": "us-federal",
+  "authority_type": "FD&C Act; FTC Act; FDA/FTC guidance",
+  "scope": "Promotional claims for drugs, compounded products, and related wellness products",
+  "direct_answer": "Health claims for drugs must be supported by substantial evidence and must not misstate FDA approval status. The FTC requires adequate substantiation for health claims, and the FDA can act against false or misleading drug claims.",
+  "definitions": [
+    {
+      "term": "Substantial evidence",
+      "definition": "Adequate and well-controlled investigations for the claims being made."
+    },
+    {
+      "term": "Express vs. implied claim",
+      "definition": "An express claim is stated directly; an implied claim is suggested by images, context, or wording."
+    }
+  ],
+  "decision_logic": "1. Is the product marketed as a drug (prevents, treats, cures, mitigates disease)? 2. If yes, is there an approved application or an applicable exemption? 3. Are claims substantiated? 4. Does the claim correctly distinguish approval, compounding, and investigational status?",
+  "examples": [
+    "A social post saying 'This peptide is FDA approved' when only a different brand-name product is approved is misleading.",
+    "Calling a compounded product 'the same as Ozempic' omits that compounded drugs are not FDA approved."
+  ],
+  "limitations": [
+    "This page does not cover all FTC advertising requirements.",
+    "It does not apply to lawful off-label discussion by prescribers."
+  ],
+  "controlling_source_ids": [
+    "fda-xcel-warning-letter-2024"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

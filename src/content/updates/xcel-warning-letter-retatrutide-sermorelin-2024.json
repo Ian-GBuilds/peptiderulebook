@@ -1,0 +1,42 @@
+{
+  "id": "xcel-warning-letter-retatrutide-sermorelin-2024",
+  "slug": "xcel-warning-letter-retatrutide-sermorelin-2024",
+  "title": "FDA warning letter: retatrutide and sermorelin products are unapproved new drugs",
+  "dek": "The December 2024 Xcel Research warning letter shows how FDA treats 'research use only' labels when website claims indicate intended human use.",
+  "direct_answer": "On December 10, 2024, FDA warned Xcel Research LLC that its retatrutide, sermorelin, and other peptide products were unapproved new drugs and misbranded. The agency said 'research use only' labeling did not overcome the intended-use evidence from website claims.",
+  "key_takeaways": [
+    "Retatrutide is investigational; no FDA-approved product exists.",
+    "Sermorelin's approved product (Geref) is discontinued from marketing.",
+    "'Research use only' labels do not shield products from FDA drug-status review."
+  ],
+  "body": "<p>FDA's warning letter to Xcel Research LLC identified products labeled as RETA (retatrutide), sermorelin, and blends containing semaglutide and cagrilintide. The agency concluded that website claims about weight management, glucose control, and other therapeutic effects established intended use as drugs for human use.</p><p>Because no approved application was in effect for these products, FDA classified them as unapproved new drugs introduced in violation of sections 301(d) and 505(a) of the FD&C Act.</p><h2>What did not change</h2><p>The letter does not change the underlying status of the active ingredients. Retatrutide remains investigational; sermorelin remains without a currently marketed approved product; semaglutide remains approved only in its approved products.</p>",
+  "event_date": "2024-12-10",
+  "publication_date": "2024-12-12",
+  "effective_date": "2024-12-10",
+  "procedural_status": "Enforcement action recorded",
+  "what_changed": "FDA published a warning letter putting sellers on notice that retatrutide and sermorelin products marketed online are unapproved new drugs.",
+  "what_did_not_change": "No new approval or compounding pathway was created for these substances.",
+  "next_step": "The firm must respond with corrective steps; FDA may take further action if violations continue.",
+  "affected_substance_slugs": [
+    "retatrutide",
+    "sermorelin",
+    "semaglutide"
+  ],
+  "affected_rule_slugs": [
+    "research-use-only",
+    "health-claims",
+    "fda-approval"
+  ],
+  "document_ids": [
+    "fda-xcel-warning-letter-2024"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "date_published": "2024-12-12",
+  "date_modified": "2025-03-01",
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "hero_image": "/images/heroes/xcel-warning-letter-2024.svg",
+  "hero_alt": "Regulatory document graphic for the Xcel Research warning letter update",
+  "status": "published"
+}

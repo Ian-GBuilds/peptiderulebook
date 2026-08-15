@@ -1,0 +1,107 @@
+{
+  "name": "Peptide Rulebook",
+  "tagline": "What the rules say. What changed. What it means.",
+  "url": "https://peptiderulebook.com",
+  "description": "A source-linked tracker for peptide approvals, compounding decisions, enforcement, advertising rules, and jurisdiction-specific status.",
+  "twitter": "@PeptideRulebook",
+  "header_nav": [
+    {
+      "label": "Substance Status",
+      "href": "/substances"
+    },
+    {
+      "label": "Rulebook",
+      "href": "/rules"
+    },
+    {
+      "label": "Jurisdictions",
+      "href": "/jurisdictions"
+    },
+    {
+      "label": "Trackers",
+      "href": "/trackers"
+    },
+    {
+      "label": "Updates",
+      "href": "/updates"
+    },
+    {
+      "label": "Search",
+      "href": "/search"
+    },
+    {
+      "label": "Get Alerts",
+      "href": "/newsletter"
+    }
+  ],
+  "footer_nav": [
+    {
+      "label": "Substances",
+      "href": "/substances"
+    },
+    {
+      "label": "Jurisdictions",
+      "href": "/jurisdictions"
+    },
+    {
+      "label": "Documents",
+      "href": "/documents"
+    },
+    {
+      "label": "Trackers",
+      "href": "/trackers"
+    },
+    {
+      "label": "Rulebook",
+      "href": "/rules"
+    },
+    {
+      "label": "Claim Check",
+      "href": "/claim-check"
+    },
+    {
+      "label": "Updates",
+      "href": "/updates"
+    },
+    {
+      "label": "Methodology",
+      "href": "/about/status-methodology"
+    },
+    {
+      "label": "Editorial Standards",
+      "href": "/about/editorial-standards"
+    },
+    {
+      "label": "Corrections",
+      "href": "/about/corrections"
+    },
+    {
+      "label": "Funding",
+      "href": "/about/funding"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    },
+    {
+      "label": "Newsletter",
+      "href": "/newsletter"
+    },
+    {
+      "label": "Disclaimer",
+      "href": "/disclaimer"
+    },
+    {
+      "label": "Privacy",
+      "href": "/privacy"
+    },
+    {
+      "label": "Terms",
+      "href": "/terms"
+    }
+  ]
+}

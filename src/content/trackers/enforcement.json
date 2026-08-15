@@ -1,0 +1,58 @@
+{
+  "id": "enforcement",
+  "slug": "enforcement",
+  "name": "Enforcement tracker",
+  "description": "Selected FDA warning letters and enforcement actions involving peptide products.",
+  "columns": [
+    {
+      "key": "date",
+      "label": "Date"
+    },
+    {
+      "key": "firm",
+      "label": "Firm"
+    },
+    {
+      "key": "substances",
+      "label": "Substances"
+    },
+    {
+      "key": "action",
+      "label": "Action"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    }
+  ],
+  "rows": [
+    {
+      "date": "2024-12-10",
+      "firm": "Xcel Research LLC",
+      "substances": "Retatrutide, sermorelin, semaglutide blends",
+      "action": "Warning letter — unapproved new drugs",
+      "source": "FDA"
+    },
+    {
+      "date": "2023-06-12",
+      "firm": "Warrior Labz SARMS",
+      "substances": "BPC-157, TB-500",
+      "action": "Warning letter — unapproved new drugs",
+      "source": "FDA"
+    },
+    {
+      "date": "2007-08-30",
+      "firm": "Melanocorp",
+      "substances": "Melanotan II",
+      "action": "Warning letter — unapproved new drug",
+      "source": "FDA"
+    }
+  ],
+  "source_ids": [
+    "fda-xcel-warning-letter-2024",
+    "fda-warrior-labz-warning-2023",
+    "fda-melanotan-warning-2007"
+  ],
+  "last_updated": "2025-03-01",
+  "next_update_at": "2025-06-01"
+}

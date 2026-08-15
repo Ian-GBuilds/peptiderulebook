@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+<Layout title="Status Methodology" description="How Peptide Rulebook classifies and verifies peptide regulatory status." canonical="/about/status-methodology">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Status Methodology', href: '/about/status-methodology' }]} />
+    <div class="py-10 prose prose-slate max-w-none">
+      <h1 class="text-4xl font-bold text-[#1e293b]">Status methodology</h1>
+      <p class="lead">Our status assertions are structured so you can see the activity, jurisdiction, status, as-of date, qualification, and controlling source for every claim.</p>
+      <h2>Activity</h2>
+      <p>The regulated activity (e.g., FDA-approved drug product, 503A compounding, 503B outsourcing, national drug shortage, sport rule).</p>
+      <h2>Status value and label</h2>
+      <p>The status value is a controlled category used for color-coding and filtering. The status label is the human-readable phrase shown on the page.</p>
+      <h2>As-of date</h2>
+      <p>The date the controlling source took effect or was last updated. This is not necessarily the date we reviewed the record.</p>
+      <h2>Qualification</h2>
+      <p>A short explanation of what the status means, including route, indication, or scope limits.</p>
+      <h2>Confidence</h2>
+      <p>High confidence means a clear controlling source. Medium or low confidence means interpretation, pending action, or incomplete information.</p>
+      <h2>Supersession</h2>
+      <p>If an assertion is replaced by a newer assertion, the older one is marked superseded and the newer one is shown.</p>
+    </div>
+  </div>
+</Layout>

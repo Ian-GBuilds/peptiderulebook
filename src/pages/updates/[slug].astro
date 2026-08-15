@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SourceList from '../../components/SourceList';
+import { getUpdates, getUpdateBySlug, getDocuments, getAuthors, getSubstances, getRules } from '../../data/adapter';
+import { BreadcrumbList, NewsArticle } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+export async function getStaticPaths() {
+  const updates = await getUpdates();
+  return updates.map((u) => ({ params: { slug: u.slug } }));
+}
+
+const { slug } = Astro.params;
+const update = await getUpdateBySlug(slug);
+if (!update) return Astro.redirect('/404');
+
+const [documents, authors, substances, rules] = await Promise.all([
+  getDocuments(),
+  getAuthors(),
+  getSubstances(),
+  getRules(),
+]);
+
+const relatedDocs = documents.filter((d) => update.document_ids.includes(d.id));
+const author = authors.find((a) => a.id === update.author_id);
+const factChecker = authors.find((a) => a.id === update.fact_checker_id);
+const legalReviewer = authors.find((a) => a.id === update.legal_reviewer_id);
+const affectedSubstances = substances.filter((s) => update.affected_substance_slugs.includes(s.slug));
+const affectedRules = rules.filter((r) => update.affected_rule_slugs.includes(r.slug));
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Updates', href: '/updates' },
+  { label: update.title, href: `/updates/${update.slug}/` },
+];
+
+const jsonLd = [BreadcrumbList(breadcrumbs), NewsArticle(update, site)];
+---
+<Layout title={update.title} description={update.dek} canonical={`/updates/${update.slug}`} image={update.hero_image ? `${site.url}${update.hero_image}` : undefined} type="article" jsonLd={jsonLd}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="py-8">
+      {update.hero_image && (
+        <img src={update.hero_image} alt={update.hero_alt || ''} class="w-full h-48 md:h-64 object-cover rounded-xl mb-8" />
+      )}
+      <div class="flex flex-wrap gap-2 text-sm">
+        <span class="rounded bg-slate-100 px-2 py-1 text-slate-700">{update.procedural_status}</span>
+      </div>
+      <h1 class="mt-4 text-4xl font-bold text-[#1e293b]">{update.title}</h1>
+      <p class="mt-4 text-xl text-slate-600">{update.dek}</p>
+      <div class="mt-4 flex flex-wrap gap-4 text-sm text-slate-500">
+        {update.event_date && <span>Event: {update.event_date}</span>}
+        <span>Published: {update.publication_date}</span>
+        {update.effective_date && <span>Effective: {update.effective_date}</span>}
+      </div>
+
+      <p class="mt-8 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{update.direct_answer}</p>
+
+      <div class="mt-8 prose prose-slate max-w-none" set:html={update.body} />
+
+      <section class="mt-10">
+        <h2 class="text-xl font-bold text-[#1e293b]">Key takeaways</h2>
+        <ul class="mt-4 space-y-2">
+          {update.key_takeaways.map((takeaway) => (
+            <li class="flex gap-2"><span class="text-emerald-500">✓</span> <span class="text-slate-700">{takeaway}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-xl font-bold text-[#1e293b]">What changed</h2>
+          <p class="mt-2 text-slate-700">{update.what_changed}</p>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-[#1e293b]">What did not change</h2>
+          <p class="mt-2 text-slate-700">{update.what_did_not_change}</p>
+        </div>
+      </section>
+
+      {update.next_step && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Next step</h2>
+          <p class="mt-2 text-slate-700">{update.next_step}</p>
+        </section>
+      )}
+
+      {(affectedSubstances.length > 0 || affectedRules.length > 0) && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Affected records</h2>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {affectedSubstances.map((s) => (
+              <a href={`/substances/${s.slug}/`} class="rounded bg-emerald-50 px-3 py-1 text-sm text-emerald-700 hover:underline">{s.canonical_name}</a>
+            ))}
+            {affectedRules.map((r) => (
+              <a href={`/rules/${r.slug}/`} class="rounded bg-blue-50 px-3 py-1 text-sm text-blue-700 hover:underline">{r.name}</a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <SourceList client:visible sources={relatedDocs} title="Controlling documents" />
+
+      {update.faq_items && update.faq_items.length > 0 && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Frequently asked questions</h2>
+          <dl class="mt-4 space-y-4">
+            {update.faq_items.map((faq) => (
+              <div class="rounded-lg border border-slate-200 bg-white p-4">
+                <dt class="font-semibold text-[#1e293b]">{faq.question}</dt>
+                <dd class="mt-2 text-slate-700">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
+        <div>Author: <span class="font-medium text-slate-900">{author?.name || update.author_id}</span></div>
+        {factChecker && <div>Fact checker: <span class="font-medium text-slate-900">{factChecker.name}</span></div>}
+        {legalReviewer && <div>Legal reviewer: <span class="font-medium text-slate-900">{legalReviewer.name}</span></div>}
+        <div>Last verified: <span class="font-medium text-slate-900">{update.last_verified}</span></div>
+      </div>
+    </article>
+  </div>
+</Layout>

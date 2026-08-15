@@ -1,0 +1,50 @@
+{
+  "id": "pt-141",
+  "slug": "pt-141",
+  "canonical_name": "Bremelanotide",
+  "synonyms": [
+    "PT-141",
+    "Vyleesi"
+  ],
+  "identity_notes": "A melanocortin receptor agonist peptide. FDA approved it as Vyleesi for a specific premenopausal HSDD indication.",
+  "status_assertions": [
+    {
+      "id": "pt-141-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "approved",
+      "status_label": "Approved product — specific indication/route",
+      "qualification": "Vyleesi (bremelanotide) subcutaneous injection approved 2019-06-21 for acquired, generalized hypoactive sexual desire disorder in premenopausal women.",
+      "controlling_source_ids": [
+        "fda-vyleesi-approval-2019"
+      ],
+      "as_of_date": "2019-06-21",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2019-06-21",
+      "title": "FDA approves Vyleesi",
+      "description": "Approved for acquired, generalized HSDD in premenopausal women.",
+      "source_ids": [
+        "fda-vyleesi-approval-2019"
+      ],
+      "procedural_status": "final"
+    }
+  ],
+  "document_ids": [
+    "fda-vyleesi-approval-2019"
+  ],
+  "rule_ids": [
+    "fda-approval"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "reviewer_id": "regulatory-reviewer"
+}

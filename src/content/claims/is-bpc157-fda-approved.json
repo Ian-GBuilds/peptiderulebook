@@ -1,0 +1,24 @@
+{
+  "id": "is-bpc157-fda-approved",
+  "slug": "is-bpc157-fda-approved",
+  "title": "Is BPC-157 FDA approved?",
+  "claim": "BPC-157 is FDA approved / legal to use / a safe peptide.",
+  "verdict": "misleading",
+  "correct_wording": "As of September 27, 2024, BPC-157 is not an FDA-approved drug, is in Category 2 of the 503A bulk list (significant safety risks), and is prohibited at all times in sport under WADA S0.",
+  "controlling_source_ids": [
+    "fda-503a-bulk-list-2024",
+    "wada-prohibited-list-2025"
+  ],
+  "date": "2024-09-27",
+  "jurisdiction": "U.S. federal",
+  "why_confusion": "Online vendors and social posts often use 'peptide' and 'research use' language that collapses the distinction between an experimental substance and an approved drug.",
+  "affected_substance_slugs": [
+    "bpc-157"
+  ],
+  "affected_rule_slugs": [
+    "fda-approval"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "last_verified": "2025-03-01"
+}

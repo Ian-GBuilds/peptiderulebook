@@ -1,0 +1,36 @@
+{
+  "id": "wada-2025-list-in-force",
+  "slug": "wada-2025-list-in-force",
+  "title": "WADA 2025 Prohibited List now in force",
+  "dek": "The updated list, effective January 1, 2025, keeps non-approved peptides such as BPC-157 in S0 and reminds athletes that sport rules differ from drug-approval rules.",
+  "direct_answer": "As of January 1, 2025, the WADA Prohibited List is in force. BPC-157 remains listed as an example in class S0 (non-approved substances), which is prohibited at all times for athletes subject to the World Anti-Doping Code.",
+  "key_takeaways": [
+    "S0 covers non-approved substances, including BPC-157.",
+    "WADA status is a sport rule, not an FDA approval decision.",
+    "Athletes are strictly liable for what is in their systems."
+  ],
+  "body": "<p>WADA's 2025 Prohibited List took effect on January 1, 2025. The list is one of eight mandatory International Standards under the World Anti-Doping Code. For peptide regulation, the most relevant class is S0: Non-Approved Substances. BPC-157 appears as an example.</p><p>It is important to distinguish WADA's sport-rule prohibition from FDA approval. A substance can be prohibited in sport without being FDA approved or unapproved in a particular way, and FDA approval does not automatically determine WADA status.</p>",
+  "event_date": "2025-01-01",
+  "publication_date": "2025-01-03",
+  "effective_date": "2025-01-01",
+  "procedural_status": "Effective",
+  "what_changed": "WADA's 2025 Prohibited List entered force, continuing the S0 classification for BPC-157.",
+  "what_did_not_change": "FDA approval status of BPC-157 did not change.",
+  "next_step": "WADA will publish annual updates; athletes should verify status through GlobalDRO or their anti-doping organization.",
+  "affected_substance_slugs": [
+    "bpc-157"
+  ],
+  "affected_rule_slugs": [],
+  "document_ids": [
+    "wada-prohibited-list-2025"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "date_published": "2025-01-03",
+  "date_modified": "2025-03-01",
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "hero_image": "/images/heroes/wada-2025-list-in-force.svg",
+  "hero_alt": "Regulatory document graphic for the WADA 2025 Prohibited List update",
+  "status": "published"
+}

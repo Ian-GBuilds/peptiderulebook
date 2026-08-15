@@ -1,0 +1,15 @@
+{
+  "id": "fda-ghk-cu-safety-2026",
+  "slug": "fda-ghk-cu-safety-2026",
+  "title": "Certain Bulk Drug Substances for Use in Compounding that May Present Significant Safety Risks (GHK-Cu)",
+  "issuing_body": "U.S. Food and Drug Administration",
+  "document_type": "Safety summary",
+  "publication_date": "2026-04-22",
+  "current_status": "Active",
+  "official_url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+  "archive_url": "",
+  "plain_language_summary": "FDA explains that compounded injectable drugs containing GHK-Cu may pose immunogenicity risks due to aggregation and peptide-related impurities.",
+  "related_substance_slugs": [
+    "ghk-cu"
+  ]
+}

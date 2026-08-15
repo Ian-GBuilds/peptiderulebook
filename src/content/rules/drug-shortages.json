@@ -1,0 +1,35 @@
+{
+  "id": "drug-shortages",
+  "slug": "drug-shortages",
+  "name": "Drug shortages and compounding",
+  "jurisdiction": "us-federal",
+  "authority_type": "FD&C Act sections 506C, 506E; FDA guidance",
+  "scope": "FDA-approved drug products determined to be in shortage",
+  "direct_answer": "When FDA determines a drug is in national shortage, certain compounding restrictions are relaxed. When the shortage resolves, those exceptions end after any announced transition period.",
+  "definitions": [
+    {
+      "term": "Shortage",
+      "definition": "A period when demand or projected demand within the U.S. exceeds supply, determined on a nationwide basis."
+    },
+    {
+      "term": "Enforcement discretion",
+      "definition": "FDA's decision not to take action for a defined period, not a change in the law."
+    }
+  ],
+  "decision_logic": "1. Is the approved drug on FDA's drug shortage list? 2. If yes, compounding copies may be allowed under 503A/503B for the duration. 3. When FDA declares the shortage resolved, copy restrictions return; FDA may provide a transition period. 4. Local stock-outs do not equal a national shortage.",
+  "examples": [
+    "Tirzepatide injection was on the shortage list; after FDA resolved the shortage on 2024-12-19, 503A copies became restricted again.",
+    "Semaglutide injection shortage was resolved 2025-02-21."
+  ],
+  "limitations": [
+    "A shortage determination does not approve a new drug.",
+    "FDA's list is national, not local."
+  ],
+  "controlling_source_ids": [
+    "fda-tirzepatide-shortage-order-2024",
+    "fda-semaglutide-shortage-order-2025"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

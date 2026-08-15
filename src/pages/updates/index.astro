@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UpdateCard from '../../components/UpdateCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getPublishedUpdates } from '../../data/adapter';
+import { ItemList } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+const updates = await getPublishedUpdates();
+const listLd = ItemList(updates.map((u) => ({
+  name: u.title,
+  url: `${site.url}/updates/${u.slug}/`,
+  description: u.dek,
+})));
+---
+<Layout title="Updates" description="Regulatory updates on peptide approvals, compounding decisions, shortages, enforcement, and claim checks." canonical="/updates" jsonLd={listLd}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Updates', href: '/updates' }]} />
+    <div class="py-10">
+      <h1 class="text-3xl font-bold text-[#1e293b] mb-4">Updates</h1>
+      <p class="text-slate-600 max-w-3xl">Source-linked updates on what changed, what did not change, and what to watch next.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {updates.map((u) => <UpdateCard update={u} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

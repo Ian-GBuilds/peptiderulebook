@@ -1,0 +1,38 @@
+{
+  "id": "503a",
+  "slug": "503a",
+  "name": "503A compounding",
+  "jurisdiction": "us-federal",
+  "authority_type": "FD&C Act section 503A",
+  "scope": "Compounding by licensed pharmacists and physicians for individual patients",
+  "direct_answer": "Section 503A exempts certain compounded drugs from FDA approval and manufacturing requirements if the drug is compounded for an identified patient, uses allowable bulk drug substances, and is not essentially a copy of a commercially available drug.",
+  "definitions": [
+    {
+      "term": "Bulk drug substance",
+      "definition": "An active pharmaceutical ingredient used in compounding."
+    },
+    {
+      "term": "Essentially a copy",
+      "definition": "A compounded drug that has the same active ingredients and is generally for the same use as a commercially available drug product."
+    },
+    {
+      "term": "Commercially available",
+      "definition": "For 503A purposes, a drug not on FDA's drug shortage list."
+    }
+  ],
+  "decision_logic": "1. Is the prescriber/licensed pharmacist compounding for a specific patient? 2. Is the bulk substance on the 503A bulk list, a component of an approved drug, or compliant with an applicable USP/NF monograph? 3. Is the product essentially a copy of a commercially available drug? 4. Are state pharmacy rules satisfied?",
+  "examples": [
+    "During a drug shortage, compounding copies of an approved peptide may be allowed; once the shortage resolves, the copy restriction generally returns.",
+    "BPC-157 is in Category 2 of the 503A bulk list, so it does not have a lawful 503A pathway."
+  ],
+  "limitations": [
+    "503A products are not FDA approved and are primarily overseen by state regulators.",
+    "FDA can still take action for safety, adulteration, or misbranding concerns."
+  ],
+  "controlling_source_ids": [
+    "fda-503a-bulk-list-2024"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

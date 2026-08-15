@@ -1,0 +1,22 @@
+{
+  "id": "us-california",
+  "slug": "california",
+  "name": "California",
+  "type": "state",
+  "country": "United States",
+  "state": "CA",
+  "summary": "California regulates pharmacy compounding through the California State Board of Pharmacy and the Business and Professions Code. State requirements operate alongside, not instead of, federal FDA rules.",
+  "scope_notes": "This page is under active legal review. It currently provides orientation and links to official California sources; it is not a comprehensive state compliance guide.",
+  "key_agencies": [
+    {
+      "name": "California State Board of Pharmacy",
+      "url": "https://pharmacy.ca.gov/"
+    },
+    {
+      "name": "California Legislative Information",
+      "url": "https://leginfo.legislature.ca.gov/"
+    }
+  ],
+  "substance_slugs": [],
+  "review_status": "partial"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "semaglutide-shortage-resolved-2025",
+  "slug": "semaglutide-shortage-resolved-2025",
+  "title": "Semaglutide injection shortage resolved",
+  "dek": "FDA's February 2025 order ends the Ozempic and Wegovy shortage. Compounding transition windows are now closing.",
+  "direct_answer": "As of February 21, 2025, FDA determined that the national shortage of semaglutide injection products (Ozempic and Wegovy) is resolved. Compounded copies must now comply with standard 503A/503B copy restrictions.",
+  "key_takeaways": [
+    "Ozempic and Wegovy are no longer on FDA's national drug shortage list.",
+    "503A transition period ended April 22, 2025; 503B transition ended May 22, 2025.",
+    "Oral Rybelsus was not in shortage."
+  ],
+  "body": "<p>On February 21, 2025, FDA issued a declaratory order finding that Novo Nordisk's supply of semaglutide injection products meets or exceeds demand. The agency therefore resolved the shortage that had applied to Ozempic and Wegovy since 2022.</p><p>The order includes 60- and 90-day enforcement-discretion windows for 503A and 503B compounders, respectively, to allow patients to transition to FDA-approved products. After those windows, compounded copies are generally subject to the usual statutory restrictions.</p><h2>What did not change</h2><p>Approved indications, routes, and strengths for Ozempic, Rybelsus, and Wegovy did not change. No new semaglutide product was approved by this order.</p>",
+  "event_date": "2025-02-21",
+  "publication_date": "2025-02-22",
+  "effective_date": "2025-02-21",
+  "procedural_status": "Final/effective",
+  "what_changed": "National shortage status ended for semaglutide injection products.",
+  "what_did_not_change": "No new semaglutide approval or indication was created. Rybelsus remained out of shortage.",
+  "next_step": "FDA will continue to monitor supply and demand and can relist products if national conditions change.",
+  "affected_substance_slugs": [
+    "semaglutide"
+  ],
+  "affected_rule_slugs": [
+    "drug-shortages",
+    "503a",
+    "503b"
+  ],
+  "document_ids": [
+    "fda-semaglutide-shortage-order-2025"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "date_published": "2025-02-22",
+  "date_modified": "2025-03-01",
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "hero_image": "/images/heroes/semaglutide-shortage-resolved-2025.svg",
+  "hero_alt": "Regulatory document graphic for the semaglutide shortage resolution update",
+  "status": "published"
+}

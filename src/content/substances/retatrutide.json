@@ -1,0 +1,68 @@
+{
+  "id": "retatrutide",
+  "slug": "retatrutide",
+  "canonical_name": "Retatrutide",
+  "synonyms": [
+    "LY3437943",
+    "RETA"
+  ],
+  "identity_notes": "A triple agonist of GIP, GLP-1, and glucagon receptors. It is an investigational drug and is not a component of any FDA-approved product.",
+  "status_assertions": [
+    {
+      "id": "retatrutide-approved",
+      "jurisdiction_id": "us-federal",
+      "activity": "FDA-approved drug product",
+      "status_value": "not-approved",
+      "status_label": "Not an approved drug / investigational",
+      "qualification": "No FDA-approved application is in effect for retatrutide. It is being studied in Phase 3 clinical trials.",
+      "controlling_source_ids": [
+        "fda-xcel-warning-letter-2024"
+      ],
+      "as_of_date": "2024-12-10",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    },
+    {
+      "id": "retatrutide-503a",
+      "jurisdiction_id": "us-federal",
+      "activity": "503A/503B compounding",
+      "status_value": "not-listed",
+      "status_label": "No compounding pathway",
+      "qualification": "Retatrutide is not on the 503A or 503B bulk lists and is not a component of an FDA-approved drug.",
+      "controlling_source_ids": [
+        "fda-xcel-warning-letter-2024",
+        "fda-503a-bulk-list-2024",
+        "fda-503b-bulk-list-2025"
+      ],
+      "as_of_date": "2024-12-10",
+      "confidence": "high",
+      "reviewer_id": "regulatory-reviewer",
+      "reviewed_at": "2025-03-01"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2024-12-10",
+      "title": "FDA warning letter cites retatrutide products",
+      "description": "FDA warned Xcel Research that retatrutide products marketed online were unapproved new drugs.",
+      "source_ids": [
+        "fda-xcel-warning-letter-2024"
+      ],
+      "procedural_status": "enforcement action recorded"
+    }
+  ],
+  "document_ids": [
+    "fda-xcel-warning-letter-2024"
+  ],
+  "rule_ids": [
+    "fda-approval",
+    "research-use-only"
+  ],
+  "jurisdiction_ids": [
+    "us-federal"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "reviewer_id": "regulatory-reviewer"
+}

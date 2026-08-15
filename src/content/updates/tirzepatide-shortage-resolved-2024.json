@@ -1,0 +1,40 @@
+{
+  "id": "tirzepatide-shortage-resolved-2024",
+  "slug": "tirzepatide-shortage-resolved-2024",
+  "title": "Tirzepatide shortage resolved: what changed for compounders",
+  "dek": "FDA's December 2024 declaratory order ends the national shortage of Mounjaro and Zepbound. Here's what the status change does—and does not—mean.",
+  "direct_answer": "As of December 19, 2024, FDA determined that the national shortage of tirzepatide injection products (Mounjaro and Zepbound) is resolved. Compounded copies are now subject to the usual 503A/503B copy restrictions.",
+  "key_takeaways": [
+    "The shortage is resolved on a national basis.",
+    "FDA provided 60- and 90-day enforcement-discretion transition periods for 503A and 503B compounders.",
+    "Local stock-out reports do not override the national shortage determination."
+  ],
+  "body": "<p>On December 19, 2024, FDA issued a declaratory order concluding that tirzepatide injection products are no longer in national shortage. The order revokes and replaces the agency's October 2, 2024 decision after reevaluating supply-and-demand data from Eli Lilly and public comments.</p><p>The resolution matters for compounding because, while a drug is in shortage, FDA does not consider it 'commercially available' and certain copy restrictions under sections 503A and 503B are relaxed. Once the shortage resolves, those exceptions end. FDA said it does not intend to take action against 503A compounders for compounding tirzepatide copies for 60 days (until February 18, 2025) and against 503B outsourcing facilities for 90 days (until March 19, 2025).</p><h2>What did not change</h2><p>Mounjaro and Zepbound remain the only FDA-approved tirzepatide products. The shortage resolution does not approve new compounded products, new indications, or new routes. Compounded drugs remain unapproved and are not FDA-verified for safety, efficacy, or quality.</p><h2>Next step</h2><p>FDA will continue to monitor supply and demand and can place tirzepatide back on the shortage list if national conditions change.</p>",
+  "event_date": "2024-12-19",
+  "publication_date": "2024-12-20",
+  "effective_date": "2024-12-19",
+  "procedural_status": "Final/effective",
+  "what_changed": "National shortage status ended; copy restrictions for compounded tirzepatide copies returned after transition periods.",
+  "what_did_not_change": "No new FDA-approved tirzepatide product, indication, or route was created. Compounded products remain unapproved.",
+  "next_step": "FDA will monitor supply and demand and may relist the product if a national shortage reappears.",
+  "affected_substance_slugs": [
+    "tirzepatide"
+  ],
+  "affected_rule_slugs": [
+    "drug-shortages",
+    "503a",
+    "503b"
+  ],
+  "document_ids": [
+    "fda-tirzepatide-shortage-order-2024"
+  ],
+  "author_id": "editorial-team",
+  "legal_reviewer_id": "regulatory-reviewer",
+  "date_published": "2024-12-20",
+  "date_modified": "2025-03-01",
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-06-01",
+  "hero_image": "/images/heroes/tirzepatide-shortage-resolved-2024.svg",
+  "hero_alt": "Regulatory document graphic for the tirzepatide shortage resolution update",
+  "status": "published"
+}

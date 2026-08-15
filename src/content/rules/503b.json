@@ -1,0 +1,34 @@
+{
+  "id": "503b",
+  "slug": "503b",
+  "name": "503B outsourcing facilities",
+  "jurisdiction": "us-federal",
+  "authority_type": "FD&C Act section 503B",
+  "scope": "Registered outsourcing facilities that compound sterile or non-sterile drugs in bulk",
+  "direct_answer": "Section 503B allows FDA-registered outsourcing facilities to compound drugs without patient-specific prescriptions, but the bulk drug substance must be on the 503B bulk list or a component of an FDA-approved drug, and the product must not be essentially a copy of an approved drug.",
+  "definitions": [
+    {
+      "term": "Outsourcing facility",
+      "definition": "A facility registered with FDA under section 503B that complies with current good manufacturing practice and adverse-event reporting."
+    },
+    {
+      "term": "Category 1**, Category 2",
+      "definition": "FDA's 503B bulk list categories: under evaluation or significant safety risk."
+    }
+  ],
+  "decision_logic": "1. Is the facility registered as a 503B outsourcing facility? 2. Is the bulk substance on the 503B bulk list or a component of an FDA-approved drug? 3. Is the product essentially a copy of an approved drug product? 4. Are cGMP and labeling requirements met?",
+  "examples": [
+    "Ipamorelin acetate is in 503B Category 2, meaning it raises significant safety risks and is not on the lawful bulk list.",
+    "Semaglutide is a component of approved drugs; 503B copies are generally restricted unless a shortage applies."
+  ],
+  "limitations": [
+    "503B drugs are not FDA approved.",
+    "State pharmacy and medical practice laws also apply."
+  ],
+  "controlling_source_ids": [
+    "fda-503b-bulk-list-2025"
+  ],
+  "last_verified": "2025-03-01",
+  "next_review_at": "2025-09-01",
+  "legal_reviewer_id": "regulatory-reviewer"
+}

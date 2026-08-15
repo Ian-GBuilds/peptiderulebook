@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import StatusMatrix from '../../components/StatusMatrix';
+import Timeline from '../../components/Timeline';
+import SourceList from '../../components/SourceList';
+import NewsletterForm from '../../components/NewsletterForm';
+import { getSubstances, getSubstanceBySlug, getDocuments, getJurisdictions, getAuthors } from '../../data/adapter';
+import { BreadcrumbList } from '../../lib/jsonld';
+import site from '../../content/config/site.json';
+
+export async function getStaticPaths() {
+  const substances = await getSubstances();
+  return substances.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const substance = await getSubstanceBySlug(slug);
+if (!substance) return Astro.redirect('/404');
+
+const [documents, jurisdictions, authors] = await Promise.all([
+  getDocuments(),
+  getJurisdictions(),
+  getAuthors(),
+]);
+
+const relatedDocs = documents.filter((d) => substance.document_ids.includes(d.id));
+const reviewer = authors.find((a) => a.id === substance.reviewer_id);
+const primary = substance.status_assertions[0];
+const oneSentence = primary
+  ? `${substance.canonical_name} is currently ${primary.status_label.toLowerCase()} for ${primary.activity.toLowerCase()}.`
+  : `${substance.canonical_name} status is under review.`;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Substances', href: '/substances' },
+  { label: substance.canonical_name, href: `/substances/${substance.slug}/` },
+];
+
+const jsonLd = [
+  BreadcrumbList(breadcrumbs),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: substance.canonical_name,
+    description: substance.identity_notes,
+    url: `${site.url}/substances/${substance.slug}/`,
+  },
+];
+---
+<Layout title={substance.canonical_name} description={substance.identity_notes} canonical={`/substances/${substance.slug}`} jsonLd={jsonLd}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Breadcrumbs items={breadcrumbs} />
+    <article class="py-8">
+      <h1 class="text-4xl font-bold text-[#1e293b]">{substance.canonical_name}</h1>
+      {substance.synonyms.length > 0 && (
+        <p class="mt-2 text-slate-600">Also known as: {substance.synonyms.join(', ')}</p>
+      )}
+      <p class="mt-6 text-lg font-medium text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg p-4">{oneSentence}</p>
+      <p class="mt-6 text-slate-700">{substance.identity_notes}</p>
+
+      <StatusMatrix client:visible substance={substance} documents={relatedDocs} jurisdictions={jurisdictions} />
+
+      <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-xl font-bold text-[#1e293b]">What this means</h2>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            {substance.status_assertions.map((a) => (
+              <li class="flex gap-2"><span class="text-emerald-500">✓</span> {a.activity}: {a.status_label}. {a.qualification}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-[#1e293b]">What this does not mean</h2>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li class="flex gap-2"><span class="text-orange-500">✗</span> Status in one jurisdiction does not automatically apply elsewhere.</li>
+            <li class="flex gap-2"><span class="text-orange-500">✗</span> An approved active ingredient is not the same as an approved finished product.</li>
+            <li class="flex gap-2"><span class="text-orange-500">✗</span> “Research use” labeling does not make an unapproved drug lawful for human use.</li>
+          </ul>
+        </div>
+      </section>
+
+      <Timeline client:visible events={substance.timeline} documents={relatedDocs} />
+      <SourceList client:visible sources={relatedDocs} title="Controlling sources" />
+
+      {substance.faq_items && substance.faq_items.length > 0 && (
+        <section class="mt-10">
+          <h2 class="text-xl font-bold text-[#1e293b]">Frequently asked questions</h2>
+          <dl class="mt-4 space-y-4">
+            {substance.faq_items.map((faq) => (
+              <div class="rounded-lg border border-slate-200 bg-white p-4">
+                <dt class="font-semibold text-[#1e293b]">{faq.question}</dt>
+                <dd class="mt-2 text-slate-700">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      <div class="mt-10 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600 flex flex-wrap gap-6">
+        <div>Last verified: <span class="font-medium text-slate-900">{substance.last_verified}</span></div>
+        <div>Reviewer: <span class="font-medium text-slate-900">{reviewer?.name || substance.reviewer_id}</span></div>
+        <div>Next review: <span class="font-medium text-slate-900">{substance.next_review_at}</span></div>
+      </div>
+
+      <div class="mt-10">
+        <NewsletterForm client:load />
+      </div>
+    </article>
+  </div>
+</Layout>
