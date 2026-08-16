@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SubstanceCard from '../components/SubstanceCard.astro';
 import UpdateCard from '../components/UpdateCard.astro';
-import ClaimCard from '../components/ClaimCard.astro';
+import ClaimCardInteractive from '../components/ClaimCardInteractive';
 import NewsletterForm from '../components/NewsletterForm';
 import SearchModal from '../components/SearchModal';
+import SubstanceExplorer from '../components/SubstanceExplorer';
+import StatusOverviewMatrix from '../components/StatusOverviewMatrix';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import site from '../content/config/site.json';
 import { getSubstances, getRules, getPublishedUpdates, getClaimChecks, getTrackers, getDocuments, getJurisdictions } from '../data/adapter';
@@ -21,7 +22,6 @@ const [substances, rules, updates, claims, trackers, documents, jurisdictions] =
 ]);
 
 const latestUpdates = updates.slice(0, 5);
-const popularSubstances = substances.slice(0, 10);
 const latestClaims = claims.slice(0, 4);
 const featuredTrackers = trackers.slice(0, 3);
 
@@ -35,7 +35,7 @@ const searchIndex = [
 ];
 
 const listLd = ItemList([
-  ...popularSubstances.map((s) => ({ name: s.canonical_name, url: `${site.url}/substances/${s.slug}/`, description: s.identity_notes })),
+  ...substances.map((s) => ({ name: s.canonical_name, url: `${site.url}/substances/${s.slug}/`, description: s.identity_notes })),
 ]);
 ---
 <Layout title={site.name} description={site.description} canonical="/" jsonLd={listLd}>
@@ -63,13 +63,19 @@ const listLd = ItemList([
     </section>
 
     <section class="py-10 border-t border-hairline">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-ink">Popular substances</h2>
-        <a href="/substances" class="text-sm font-medium text-accent hover:underline">View all</a>
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-ink">Status at a glance</h2>
+        <p class="mt-2 text-ink-muted max-w-3xl">Every tracked peptide across the activities that matter — FDA approval, 503A/503B compounding, shortage, and sport rules. Hover any marker for the qualified detail.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {popularSubstances.map((s) => <SubstanceCard substance={s} />)}
+      <StatusOverviewMatrix client:visible substances={substances} />
+    </section>
+
+    <section class="py-10 border-t border-hairline">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-ink">Explore substances</h2>
+        <p class="mt-2 text-ink-muted max-w-3xl">Search by name or alias, filter by regulatory status, and select up to three to compare side-by-side.</p>
       </div>
+      <SubstanceExplorer client:load substances={substances} />
     </section>
 
     <section class="py-10 border-t border-hairline">
@@ -78,7 +84,7 @@ const listLd = ItemList([
         <a href="/claim-check" class="text-sm font-medium text-accent hover:underline">View all</a>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {latestClaims.map((c) => <ClaimCard claim={c} />)}
+        {latestClaims.map((c) => <ClaimCardInteractive client:visible claim={c} />)}
       </div>
     </section>
 

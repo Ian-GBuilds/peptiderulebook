@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ClaimCard from '../../components/ClaimCard.astro';
+import ClaimCardInteractive from '../../components/ClaimCardInteractive';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getClaimChecks } from '../../data/adapter';
 import { ItemList } from '../../lib/jsonld';
@@ -18,9 +18,9 @@ const listLd = ItemList(claims.map((c) => ({
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Claim Check', href: '/claim-check' }]} />
     <div class="py-10">
       <h1 class="text-3xl font-bold text-ink mb-4">Claim check</h1>
-      <p class="text-ink-muted max-w-3xl">We review common claims about peptide regulation and show the correct wording with controlling sources.</p>
+      <p class="text-ink-muted max-w-3xl">We review common claims about peptide regulation. Read the claim, form a view, then reveal the verdict and the correct wording with controlling sources.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {claims.map((c) => <ClaimCard claim={c} />)}
+        {claims.map((c) => <ClaimCardInteractive client:visible claim={c} />)}
       </div>
     </div>
   </div>

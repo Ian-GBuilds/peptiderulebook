@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import StatusMatrix from '../../components/StatusMatrix';
 import Timeline from '../../components/Timeline';
 import SourceList from '../../components/SourceList';
+import FaqAccordion from '../../components/FaqAccordion';
 import NewsletterForm from '../../components/NewsletterForm';
 import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
 import { getSubstances, getSubstanceBySlug, getDocuments, getJurisdictions, getAuthors } from '../../data/adapter';
@@ -88,14 +89,7 @@ const jsonLd = [
       {substance.faq_items && substance.faq_items.length > 0 && (
         <section class="mt-10">
           <h2 class="text-xl font-bold text-ink">Frequently asked questions</h2>
-          <dl class="mt-4 space-y-4">
-            {substance.faq_items.map((faq) => (
-              <div class="card p-4">
-                <dt class="font-semibold text-ink">{faq.question}</dt>
-                <dd class="mt-2 text-ink-muted">{faq.answer}</dd>
-              </div>
-            ))}
-          </dl>
+          <FaqAccordion client:visible items={substance.faq_items} />
         </section>
       )}
 
