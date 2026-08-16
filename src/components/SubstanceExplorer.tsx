@@ -310,9 +310,13 @@ function ExplorerCard({
       {/* activity mini-stamps */}
       <div className="mt-3 flex flex-wrap gap-1.5">
         {substance.status_assertions.slice(0, 4).map((a) => (
-          <span key={a.id} className={stampClass[toneFor(a.status_value)]} title={`${a.activity}: ${a.status_label}`}>
-            {activityShort(a.activity)}
-          </span>
+          <StampWithTip
+            key={a.id}
+            className={stampClass[toneFor(a.status_value)]}
+            short={activityShort(a.activity)}
+            activity={a.activity}
+            label={a.status_label}
+          />
         ))}
       </div>
 
@@ -348,4 +352,42 @@ function activityShort(activity: string): string {
   if (col) return col.short;
   if (/copies/i.test(activity)) return '503A copies';
   return activity.split(' ')[0];
+}
+
+// A mini activity stamp with a contained, width-clamped tooltip that never
+// overflows the card. Replaces the native `title` attribute (which the browser
+// renders unstyled and unbounded).
+function StampWithTip({
+  className,
+  short,
+  activity,
+  label,
+}: {
+  className: string;
+  short: string;
+  activity: string;
+  label: string;
+}) {
+  const [show, setShow] = useState(false);
+  return (
+    <span
+      className={className + ' relative cursor-help'}
+      tabIndex={0}
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      onFocus={() => setShow(true)}
+      onBlur={() => setShow(false)}
+    >
+      {short}
+      {show && (
+        <span
+          role="tooltip"
+          className="absolute z-30 left-0 top-full mt-1.5 w-56 max-w-[calc(100vw-2rem)] normal-case tracking-normal bg-ink text-paper text-left rounded-sm p-2.5 shadow-lg pointer-events-none whitespace-normal break-words font-sans"
+        >
+          <span className="block font-mono text-[10px] uppercase tracking-wider opacity-70">{activity}</span>
+          <span className="mt-0.5 block text-xs font-medium leading-snug">{label}</span>
+        </span>
+      )}
+    </span>
+  );
 }

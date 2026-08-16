@@ -62,9 +62,9 @@ export default function StatusOverviewMatrix({ substances }: Props) {
                             aria-label={`${c.label}: ${a.status_label}`}
                           />
                           {isHover && (
-                            <div className="absolute z-20 left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 bg-ink text-paper text-left rounded-sm p-3 shadow-lg pointer-events-none">
+                            <div className="absolute z-30 left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 max-w-[calc(100vw-2rem)] bg-ink text-paper text-left rounded-sm p-3 shadow-lg pointer-events-none whitespace-normal break-words">
                               <p className="font-mono text-[10px] uppercase tracking-wider opacity-70">{c.label}</p>
-                              <p className="mt-1 text-xs font-medium">{a.status_label}</p>
+                              <p className="mt-1 text-xs font-medium leading-snug">{a.status_label}</p>
                               {a.qualification && <p className="mt-1 text-[11px] opacity-80 leading-snug">{a.qualification}</p>}
                             </div>
                           )}
