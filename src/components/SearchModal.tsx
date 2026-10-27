@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 interface SearchItem {
-  type: 'substance' | 'rule' | 'update' | 'claim' | 'document' | 'jurisdiction';
+  type: 'article' | 'substance' | 'rule' | 'update' | 'claim' | 'document' | 'jurisdiction';
   title: string;
   href: string;
   description?: string;

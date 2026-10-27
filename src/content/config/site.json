@@ -26,6 +26,10 @@
       "href": "/updates"
     },
     {
+      "label": "Articles",
+      "href": "/articles/"
+    },
+    {
       "label": "Search",
       "href": "/search"
     },
@@ -62,6 +66,10 @@
     {
       "label": "Updates",
       "href": "/updates"
+    },
+    {
+      "label": "Articles",
+      "href": "/articles/"
     },
     {
       "label": "Methodology",
